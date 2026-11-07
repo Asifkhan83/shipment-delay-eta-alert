@@ -1,0 +1,10 @@
+# Claude Code personal settings
+.claude/settings.local.json
+
+# Secrets
+.env
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
