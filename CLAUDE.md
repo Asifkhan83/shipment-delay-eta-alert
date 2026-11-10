@@ -25,6 +25,12 @@ The course's prompts use a sample brand (Kettlebird Tea / The Steep Club). Befor
 - `operations_notes/` — warehouse operations reports, summaries and internal notes.
 - `notes/` — course notes, such as which skills were chosen.
 
+## Voice
+
+All emails follow the communication and email voice guide below.
+
+@operations_notes/voice_guidelines.md
+
 ## Tooling
 
 The project has Anthropic's `operations` and `sales` plugins installed at project scope (see `.claude/settings.json`). There's no build, lint or test tooling yet. Node.js 22+ is the only runtime the course uses (for the hook in `.claude/hooks/` and `scripts/review.mjs`). The plan's "Your studio at the end" tree shows the target layout.
