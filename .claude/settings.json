@@ -1,7 +1,8 @@
 {
   "enabledPlugins": {
     "operations@knowledge-work-plugins": true,
-    "sales@knowledge-work-plugins": true
+    "sales@knowledge-work-plugins": true,
+    "marketing@knowledge-work-plugins": true
   },
   "extraKnownMarketplaces": {
     "knowledge-work-plugins": {
