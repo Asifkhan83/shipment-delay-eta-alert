@@ -18,7 +18,7 @@
 
 **Primary goal (SMART):** 120 of our 150 active vendors (80%) have **transitioned** by Sunday, January 3, 2027.
 
-**What "transitioned" means (to confirm with operations):** the vendor has (1) activated their account in the new system **and** (2) submitted at least one dispatch request, advance shipping notice (ASN) or inventory report through it. Activating an account without using it does not count.
+**What "transitioned" means (agreed):** the vendor has (1) activated their account in the new system **and** (2) submitted at least one dispatch request, advance shipping notice (ASN) or inventory report through it. Activating an account without using it does not count.
 
 **Secondary goals**
 - Every one of the 150 vendors receives the first email and knows the change is happening.
@@ -29,13 +29,13 @@
 
 ## 2. Target audience
 
-About 150 active vendors and partners in three groups. Exact counts per group are **to confirm** from the vendor list.
+150 active vendors and partners in three groups (sample split for practice: 30 / 70 / 50).
 
-| Group | Who they are | What they send us today | What they care about | Main worry |
-|---|---|---|---|---|
-| **A. High-volume freight carriers** | Larger trucking companies moving full truckload (FTL) and large less-than-truckload (LTL) freight | Pickup confirmations, bill of lading (BOL), proof of delivery (POD) | Speed, few manual steps, fitting it into their own dispatch systems | "Will this add work for our dispatchers or clash with our own system?" |
-| **B. Local LTL couriers** | Smaller regional couriers, often a few trucks and a small office | Pickup times, delivery status, POD | Simple steps, works on a phone, no new cost | "Is this complicated? Do we need new software?" |
-| **C. Packaging supply vendors** | Suppliers sending boxes, pallets, wrap and labels to our warehouse | ASNs, dock appointment requests, delivery confirmations | Getting dock appointments easily, clear inventory needs | "Will we still get our dock slots and orders on time?" |
+| Group | Vendors | Who they are | What they send us today | What they care about | Main worry |
+|---|---|---|---|---|---|
+| **A. High-volume freight carriers** | 30 | Larger trucking companies moving full truckload (FTL) and large less-than-truckload (LTL) freight | Pickup confirmations, bill of lading (BOL), proof of delivery (POD) | Speed, few manual steps, fitting it into their own dispatch systems | "Will this add work for our dispatchers or clash with our own system?" |
+| **B. Local LTL couriers** | 70 | Smaller regional couriers, often a few trucks and a small office | Pickup times, delivery status, POD | Simple steps, works on a phone, no new cost | "Is this complicated? Do we need new software?" |
+| **C. Packaging supply vendors** | 50 | Suppliers sending boxes, pallets, wrap and labels to our warehouse | ASNs, dock appointment requests, delivery confirmations | Getting dock appointments easily, clear inventory needs | "Will we still get our dock slots and orders on time?" |
 
 **Short profile:** a dispatcher or account contact at a carrier or supplier who handles Apex shipments alongside many other customers. They need to know exactly what changes, by when, and what to do, in as few steps as possible. They read email on desktop and phone, often between loads.
 
@@ -45,7 +45,7 @@ About 150 active vendors and partners in three groups. Exact counts per group ar
 
 ## 3. Key messages
 
-**Core message:** *From December 7, Apex dispatch requests, ASNs and inventory reports move to one online system. Set up your account in about 10 minutes (time to confirm), and send your next update there.*
+**Core message:** *From December 7, Apex dispatch requests, ASNs and inventory reports move to one online system. Set up your account in [setup time: confirm with operations], and send your next update there.*
 
 **Supporting messages**
 
@@ -93,7 +93,7 @@ Questions? Reply to this email or call (555) 010-0000 (Mon–Fri, 7 am–7 pm).
 
 ## 5. Content calendar
 
-The holidays fall in weeks 3 and 4 (Christmas on Friday, Dec 25, and New Year's Day on Friday, Jan 1), so the plan **front-loads the work into weeks 1 and 2** and sends no emails on Dec 24–25 or Dec 31–Jan 1.
+The holidays fall in weeks 3 and 4 (Christmas on Friday, Dec 25, and New Year's Day on Friday, Jan 1), so the plan **front-loads the work into weeks 1 and 2** and sends no emails on Dec 24–27 or Dec 31–Jan 1.
 
 **How the sequence works**
 - Everyone gets **E1** and **E2**.
@@ -106,14 +106,14 @@ The holidays fall in weeks 3 and 4 (Christmas on Friday, Dec 25, and New Year's 
 | Before launch | by Thu, Dec 3 | — | — | System live and tested, vendor accounts created, setup guides published, vendor list cleaned and split into groups A/B/C. **E1 can't go out until all of this is done.** | To do |
 | 1 | Mon, Dec 7 | **E1 Announcement** | All 150 | What's changing, why, and the activation link. Version per group. | To do |
 | 1 | Thu, Dec 10 | **E2 Setup guide** | All 150 | Step-by-step guide for their group, with the support line. | To do |
-| 2 | Tue, Dec 15 | **E3 Reminder 1** | Not activated | "Your account is ready. Activate it in about 10 minutes." | To do |
+| 2 | Tue, Dec 15 | **E3 Reminder 1** | Not activated | "Your account is ready. Activate it in [setup time: confirm with operations]." | To do |
 | 2 | Thu, Dec 17 | **E4 First update nudge** | Activated, no report yet | "Send your next ASN or dispatch request through the system." | To do |
 | 2 | Fri, Dec 18 | **E5 Holiday schedule + deadline** | Not yet transitioned | Apex holiday dispatch hours and the Jan 3 target date. Ask them to finish before Wed, Dec 23. | To do |
 | 3 | Tue, Dec 22 | **E6 Last call before the holidays** | Not yet transitioned | Short. One action, one link. | To do |
 | 3 | Dec 24–27 | *No emails* | — | Christmas break. | — |
 | 4 | Tue, Dec 29 | **E7 Welcome back reminder** | Not yet transitioned | Final reminder before the Jan 3 target. | To do |
 | 4 | Dec 31–Jan 1 | *No emails* | — | New Year break. | — |
-| 4 | Mon, Jan 4 | Internal report | Apex ops managers | Final count by group. List of vendors still not transitioned, for account managers to follow up after the campaign. | To do |
+| After | Mon, Jan 4 | Internal report | Apex ops managers | Final count by group. List of vendors still not transitioned, for account managers to follow up after the campaign. | To do |
 | Any time | When triggered | **T1 Confirmation** | Each vendor who transitions | "You're set up. Here's where to see your dock appointments and requests." Automatic. | To do |
 
 **Weekly internal check-ins** (email to ops managers): Fri Dec 11, Fri Dec 18, Wed Dec 23 and Mon Jan 4, with the count of activated and transitioned vendors by group.
@@ -153,6 +153,17 @@ All drafts go in `vendor_campaigns/dispatch-system-rollout/emails/` and are chec
 | Wed, Dec 23 (before Christmas) | 120 | 100 |
 | Sun, Jan 3 (end) | 135 | **120** |
 
+**Targets by group** (they add up to 120, and every group is at least 70%)
+
+| Group | Vendors | Target transitioned | Share |
+|---|---|---|---|
+| A. High-volume freight carriers | 30 | 26 | 87% |
+| B. Local LTL couriers | 70 | 52 | 74% |
+| C. Packaging supply vendors | 50 | 42 | 84% |
+| **Total** | **150** | **120** | **80%** |
+
+Group B is the largest group and the most likely to find a new system hard, so it has the lowest target and gets the closest weekly watch.
+
 **Secondary KPIs**
 
 | KPI | Target | How it's tracked |
@@ -173,7 +184,7 @@ All drafts go in `vendor_campaigns/dispatch-system-rollout/emails/` and are chec
 
 No budget was given. The plan uses only email and existing staff. The main cost is staff time:
 
-- writing and checking 11 emails and 3 setup guides (week before launch)
+- writing and checking 12 email versions (8 emails; E1 and E2 have one version per group) and 3 setup guides (week before launch)
 - answering vendor replies (highest in week 1)
 - weekly reporting
 
@@ -197,8 +208,8 @@ Contingency: plan for one extra person on the shared inbox during the launch wee
 ## 10. Next steps
 
 **Do first (by Thu, Dec 3)**
-1. Confirm the definition of "transitioned" with operations.
-2. Confirm vendor counts in groups A, B and C, and clean the contact list.
+1. Share the agreed definition of "transitioned" (section 1) with operations so the system reports it the same way.
+2. Split the vendor list into groups A (30), B (70) and C (50), and clean the contact list.
 3. Confirm the system will be live and tested for Dec 7, and get the activation link and support details.
 4. Confirm Apex holiday dispatch hours for E5.
 5. Write E1, E2, T1 and the three setup guides.
@@ -214,6 +225,11 @@ Contingency: plan for one extra person on the shared inbox during the launch wee
 
 **Open items to confirm** (not stated in this plan because they need a verified source)
 - The system's name and activation link
-- Exact setup time ("about 10 minutes" is a placeholder)
+- Exact setup time (shown as "[setup time: confirm with operations]" in sections 3 and 5)
 - Whether the old email and phone method stops, and when
-- Number of vendors in each group
+
+**Decisions agreed with the campaign owner (Nov 11, 2026)**
+- "Transitioned" = account activated **and** at least one update sent through the system.
+- Group sizes: 30 carriers, 70 LTL couriers, 50 packaging suppliers (sample split).
+- Email load: 7 campaign emails plus 1 automatic confirmation. Reminders stop once a vendor transitions.
+- Weekly targets: front-loaded, with 100 transitioned by Dec 23 and 120 by Jan 3.
