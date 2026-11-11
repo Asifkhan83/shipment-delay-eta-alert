@@ -1,0 +1,25 @@
+first_name,last_name,company,email,vendor_group,onboarded_on,consent
+Marcus,Chen,Swift Freight,marcus.chen@example.com,high-volume freight carriers,2024-05-10,vendor agreement
+Priya,Raman,Northline Haulage,priya.raman@example.com,high-volume freight carriers,2023-02-14,vendor agreement
+Daniel,Okafor,Ironroad Carriers,daniel.okafor@example.com,high-volume freight carriers,2023-09-05,vendor agreement
+Elena,Vasquez,Bluepeak Transport,elena.vasquez@example.com,high-volume freight carriers,2024-11-18,opted in
+Tom,Harlow,Great Plains Freightways,tom.harlow@example.com,high-volume freight carriers,2025-03-27,vendor agreement
+Aisha,Malik,Summit Linehaul,aisha.malik@example.com,high-volume freight carriers,2025-08-12,trade show
+Kenji,Watanabe,Crossland Cargo,kenji.watanabe@example.com,high-volume freight carriers,2026-04-03,vendor agreement
+Grace,Mbeki,Redstone Freight Lines,grace.mbeki@example.com,high-volume freight carriers,2026-09-21,vendor agreement
+Sarah,Jenkins,City LTL Logistics,sarah.jenkins@example.com,local LTL couriers,2025-11-22,vendor agreement
+Luis,Moreno,Metro Dock Couriers,luis.moreno@example.com,local LTL couriers,2023-04-19,vendor agreement
+Hannah,Becker,Riverside Parcel Runners,hannah.becker@example.com,local LTL couriers,2023-12-08,opted in
+Omar,Haddad,Quickstop Delivery Co,omar.haddad@example.com,local LTL couriers,2024-06-30,vendor agreement
+Megan,O'Brien,Harbor Lane Couriers,megan.obrien@example.com,local LTL couriers,2025-01-15,vendor agreement
+Samuel,Adeyemi,Eastgate Freight Shuttle,samuel.adeyemi@example.com,local LTL couriers,2025-07-09,trade show
+Lily,Nguyen,Downtown Pallet Express,lily.nguyen@example.com,local LTL couriers,2026-02-24,vendor agreement
+Ravi,Patel,Townline Courier Group,ravi.patel@example.com,local LTL couriers,2026-10-06,vendor agreement
+Olivia,Grant,Boxwell Packaging,olivia.grant@example.com,packaging supply vendors,2023-03-22,vendor agreement
+Jamal,Brooks,CrateCraft Supplies,jamal.brooks@example.com,packaging supply vendors,2023-10-30,vendor agreement
+Sofia,Lindqvist,Greenwrap Materials,sofia.lindqvist@example.com,packaging supply vendors,2024-02-11,trade show
+Ethan,Clarke,Sealright Tape and Film,ethan.clarke@example.com,packaging supply vendors,2024-08-27,vendor agreement
+Nadia,Petrova,Palletpoint Supply,nadia.petrova@example.com,packaging supply vendors,2025-05-16,opted in
+Carlos,Ruiz,Cornerstone Cartons,carlos.ruiz@example.com,packaging supply vendors,2025-12-01,vendor agreement
+Yuki,Tanaka,Fillpack Cushioning,yuki.tanaka@example.com,packaging supply vendors,2026-06-18,vendor agreement
+Ben,Foster,Stackwise Labels,ben.foster@example.com,packaging supply vendors,2026-08-29,vendor agreement
