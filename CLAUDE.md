@@ -13,7 +13,7 @@ This is a Logistics and Warehouse Email Automation Studio, run with Claude Code.
 Two documents set its direction:
 
 - `README.md` is the main business use case: a **Shipment Delay and ETA Alert System**. When the TMS detects a revised ETA beyond the agreed delivery window, customers get an email with the original ETA, the revised ETA, the verified reason (from an authorized operational source only) and the corrective action. Critical delays escalate to the operations manager, and a follow-up email goes out when the shipment is back on schedule.
-- `EMAIL-STUDIO-LAB-PLAN.md` is the 15-step course we follow, in order. It has a progress checklist at the top. Every step goes: build prompt → `/exit` and a fresh `claude` session → check prompt. A check session must never change files. Tick a step's checkbox only after its check passes.
+- `ASSIGNMENT.md` is the 15-step course we follow, in order. It has a progress checklist at the top. Every step goes: build prompt → `/exit` and a fresh `claude` session → check prompt. A check session must never change files. Tick a step's checkbox only after its check passes.
 
 The course's prompts use a sample brand (Kettlebird Tea / The Steep Club). Before running a step's build prompt, confirm with the user whether to use the sample or adapt it to the shipment-delay use case.
 

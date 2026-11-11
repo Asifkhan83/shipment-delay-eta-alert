@@ -11,10 +11,10 @@ You will set up an email marketing studio and run it with Claude Code. Claude pl
 ## Progress tracker
 
 ### Part 1 · Plan and write
-- [ ] 1. Look before you build
-- [ ] 2. Set up your studio
-- [ ] 3. Your brand voice
-- [ ] 4. Plan the campaign
+- [x] 1. Look before you build
+- [x] 2. Set up your studio
+- [x] 3. Your brand voice
+- [x] 4. Plan the campaign
 - [ ] 5. Practice leads
 - [ ] 6. Email rule and sequence
 - [ ] 7. Fresh-eyes review
