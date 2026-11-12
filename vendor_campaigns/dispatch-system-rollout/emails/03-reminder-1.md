@@ -21,7 +21,7 @@ Activating takes [setup time: confirm with operations]. After that, you can send
 
 The setup page also has the step-by-step guide for your group, if you need it again.
 
-**Something not working, or not the right contact?** Reply to this email and tell us. A member of our dispatch team will answer within one business day.
+**Something not working, or not the right contact?** Reply to this email and tell us. A member of our dispatch team will answer within [reply time: confirm with operations].
 
 — Apex Transit Solutions Dispatch Team
 This update was sent automatically from our tracking system.
