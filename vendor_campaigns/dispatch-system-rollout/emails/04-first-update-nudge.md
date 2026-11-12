@@ -17,13 +17,13 @@ Thank you for activating your Apex dispatch account for {{company_name}}.
 
 There's one more step: **send your next update to Apex through the system** instead of by email or phone. This can be your next dispatch request, pickup confirmation or advance shipping notice (ASN).
 
-[Send your first update](https://apextransit.example/dispatch-setup)
+[Open your Apex account](https://apextransit.example/dispatch-setup)
 
 Once your first update comes through, we'll send you a short confirmation with where to find your dock appointments and request status.
 
-The setup page also has the step-by-step guide for your group.
+[If confirmed: The setup page also has the step-by-step guide for your group.]
 
-**Not sure how to send it?** Reply to this email or call us. A member of our dispatch team will answer within [reply time: confirm with operations].
+**Not sure how to send it?** Ask us, and a member of our dispatch team will answer within [reply time: confirm with operations].
 
 — Apex Transit Solutions Dispatch Team
 This update was sent automatically from our tracking system.
