@@ -16,7 +16,7 @@ You will set up a Logistics and Warehouse Email Automation Studio for **Apex Tra
 - [x] 3. Your brand voice
 - [x] 4. Plan the campaign
 - [x] 5. Practice leads
-- [ ] 6. Email rule and sequence
+- [x] 6. Email rule and sequence
 - [ ] 7. Fresh-eyes review
 - [ ] 8. Your own skill: personalize
 
