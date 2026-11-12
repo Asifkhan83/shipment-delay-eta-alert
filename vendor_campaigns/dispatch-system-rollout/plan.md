@@ -45,7 +45,7 @@
 
 ## 3. Key messages
 
-**Core message:** *From December 7, Apex dispatch requests, ASNs and inventory reports move to one online system. Set up your account in [setup time: confirm with operations], and send your next update there.*
+**Core message:** *From December 7, Apex dispatch requests, ASNs and inventory reports move to one online system. Set up your account in about 15 minutes, and send your next update there.*
 
 **Supporting messages**
 
@@ -58,7 +58,7 @@
 
 **Message by group**
 - **Carriers (A):** focus on pickups, BOL and POD upload, and how it fits their dispatch routine.
-- **LTL couriers (B):** focus on how few steps it takes and that it works on a phone (to confirm).
+- **LTL couriers (B):** focus on how few steps it takes and that it works in a phone's web browser with nothing to install.
 - **Packaging vendors (C):** focus on ASNs and booking dock appointments.
 
 **Voice rules for every email** (from `operations_notes/voice_guidelines.md`)
@@ -106,7 +106,7 @@ The holidays fall in weeks 3 and 4 (Christmas on Friday, Dec 25, and New Year's 
 | Before launch | by Thu, Dec 3 | — | — | System live and tested, vendor accounts created, setup guides published, vendor list cleaned and split into groups A/B/C. **E1 can't go out until all of this is done.** | To do |
 | 1 | Mon, Dec 7 | **E1 Announcement** | All 150 | What's changing, why, and the activation link. Version per group. | To do |
 | 1 | Thu, Dec 10 | **E2 Setup guide** | All 150 | Step-by-step guide for their group, with the support line. | To do |
-| 2 | Tue, Dec 15 | **E3 Reminder 1** | Not activated | "Your account is ready. Activate it in [setup time: confirm with operations]." | To do |
+| 2 | Tue, Dec 15 | **E3 Reminder 1** | Not activated | "Your account is ready. Activate it in about 15 minutes." | To do |
 | 2 | Thu, Dec 17 | **E4 First update nudge** | Activated, no report yet | "Send your next ASN or dispatch request through the system." | To do |
 | 2 | Fri, Dec 18 | **E5 Holiday schedule + deadline** | Not yet transitioned | Apex holiday dispatch hours and the Jan 3 target date. Ask them to finish before Wed, Dec 23. | To do |
 | 3 | Tue, Dec 22 | **E6 Last call before the holidays** | Not yet transitioned | Short. One action, one link. | To do |
@@ -223,10 +223,13 @@ Contingency: plan for one extra person on the shared inbox during the launch wee
 - **Fri, Dec 11:** if fewer than 50 have activated, add a second reminder in week 2.
 - **Wed, Dec 23:** if fewer than 90 have transitioned, plan account-manager follow-up for January (outside this email-only campaign).
 
-**Open items to confirm** (not stated in this plan because they need a verified source)
-- The system's name and activation link
-- Exact setup time (shown as "[setup time: confirm with operations]" in sections 3 and 5)
-- Whether the old email and phone method stops, and when
+**Facts confirmed by operations** (sample answers for practice, Nov 13, 2026)
+- System name: **Apex Dispatch Portal**. Activation link: `https://apextransit.example/dispatch-setup`.
+- Setup time: about 15 minutes.
+- Works in a phone's web browser. No app and no software to install.
+- The old email and phone method ends on **Friday, January 15, 2027**.
+- The dispatch team replies to vendor questions within one business day, including requests to connect a vendor's own dispatch system.
+- Each vendor group has its own step-by-step guide on the setup page, live by Thu, Dec 3.
 
 **Decisions agreed with the campaign owner (Nov 11, 2026)**
 - "Transitioned" = account activated **and** at least one update sent through the system.

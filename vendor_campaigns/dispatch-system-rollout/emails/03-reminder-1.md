@@ -15,15 +15,15 @@ Hi {{first_name}},
 
 Your Apex dispatch account for {{company_name}} is ready, but it hasn't been activated yet.
 
-Activating takes [setup time: confirm with operations]. After that, you can send dispatch requests, advance shipping notices (ASNs), dock appointment requests and inventory reports in one place.
+Activating takes about 15 minutes. After that, you can send dispatch requests, advance shipping notices (ASNs), dock appointment requests and inventory reports in one place.
 
 Then send your next update to Apex through the system instead of by email or phone.
 
 [Activate your account](https://apextransit.example/dispatch-setup)
 
-[If confirmed: The setup page also has the step-by-step guide for your group, if you need it again.]
+The setup page also has the step-by-step guide for your group, if you need it again.
 
-**Something not working, or not the right contact?** Tell us, and a member of our dispatch team will answer within [reply time: confirm with operations].
+**Something not working, or not the right contact?** Tell us, and a member of our dispatch team will answer within one business day.
 
 — Apex Transit Solutions Dispatch Team
 This update was sent automatically from our tracking system.
