@@ -51,6 +51,7 @@ This studio runs the course for **Apex Transit Solutions** and its **Shipment De
 | `campaigns/.../emails/` and `groups/` | `vendor_campaigns/dispatch-system-rollout/emails/` (E1–E4 of the plan) and `groups/` | Steps 6–8 |
 | Group folders and send tags | `high-volume-freight-carriers` [carriers], `local-ltl-couriers` [ltl], `packaging-supply-vendors` [packaging] | Steps 8, 11 |
 | Email link and footer | `https://apextransit.example/dispatch-setup`; footer ends "Email preferences: {{preferences_url}}" | Step 6 |
+| Product facts left blank in emails | Confirmed sample facts in `plan.md` section 10: system name **Apex Dispatch Portal**, about 15 minutes setup, phone web browser, old method ends Fri, Jan 15, 2027, replies within one business day | Done (after Step 7) |
 | Second client: Rise & Crumb bakery | Northwind Cold Storage (made up): food distributors, pharmacy suppliers | Step 14 |
 | Customer delay alerts, ETA updates, back-on-schedule emails | `dispatch_emails/` | Decide when first used |
 | Tea reviews in `notes/reviews/` | 120 made-up client feedback notes in `notes/client_feedback/` | Step 15 |
