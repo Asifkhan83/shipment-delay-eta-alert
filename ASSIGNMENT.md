@@ -2,7 +2,7 @@
 
 A hands-on Claude Code course · no coding needed
 
-You will set up an email marketing studio and run it with Claude Code. Claude plans a launch campaign, writes the emails, personalizes them for each group of customers, and sends them, safely, to a practice email server. Along the way you use every Claude Code feature on the CCAR-F exam.
+You will set up a Logistics and Warehouse Email Automation Studio for **Apex Transit Solutions** and run it with Claude Code. Claude plans a vendor rollout campaign, writes the emails, personalizes them for each vendor group, and sends them, safely, to a practice email server. Along the way you use every Claude Code feature on the CCAR-F exam.
 
 **15 steps · about 30–60 min each · no real emails are sent · no Resend account needed**
 
@@ -15,7 +15,7 @@ You will set up an email marketing studio and run it with Claude Code. Claude pl
 - [x] 2. Set up your studio
 - [x] 3. Your brand voice
 - [x] 4. Plan the campaign
-- [ ] 5. Practice leads
+- [x] 5. Practice leads
 - [ ] 6. Email rule and sequence
 - [ ] 7. Fresh-eyes review
 - [ ] 8. Your own skill: personalize
@@ -35,13 +35,35 @@ You will set up an email marketing studio and run it with Claude Code. Claude pl
 
 ---
 
+## How this course maps to my project
+
+This studio runs the course for **Apex Transit Solutions** and its **Shipment Delay and ETA Alert System** (see `README.md`). The course was written for a sample brand (Kettlebird Tea / The Steep Club); this table shows what each course file and name became here. **All 15 steps below are rewritten for Apex Transit**, so paste them as they are. Steps 1–5 show the prompts we actually ran. Rows marked "decide when first used" get filled in when we get there.
+
+| In the course | In this studio | Status |
+|---|---|---|
+| Kettlebird Tea, The Steep Club | Apex Transit Solutions, vendor dispatch system rollout | In use |
+| `brand/voice.md` | `operations_notes/voice_guidelines.md` | Done (Step 3) |
+| `campaigns/steep-club-launch/plan.md` | `vendor_campaigns/dispatch-system-rollout/plan.md` | Done (Step 4) |
+| `leads/leads.csv` | `warehouse_data/vendors.csv` (24 practice vendor contacts) | Done (Step 5) |
+| `leads/CLAUDE.md` | `warehouse_data/CLAUDE.md` | Done (Step 5) |
+| Columns `group`, `joined_on`, consent "waitlist form" | Columns `company`, `vendor_group`, `onboarded_on`, consent "vendor agreement" / "opted in" / "trade show" | Done (Step 5) |
+| Groups: tea-curious, gift-buyers, daily-drinkers | Groups: high-volume freight carriers, local LTL couriers, packaging supply vendors | Done (Step 5) |
+| `campaigns/.../emails/` and `groups/` | `vendor_campaigns/dispatch-system-rollout/emails/` (E1–E4 of the plan) and `groups/` | Steps 6–8 |
+| Group folders and send tags | `high-volume-freight-carriers` [carriers], `local-ltl-couriers` [ltl], `packaging-supply-vendors` [packaging] | Steps 8, 11 |
+| Email link and footer | `https://apextransit.example/dispatch-setup`; footer ends "Email preferences: {{preferences_url}}" | Step 6 |
+| Second client: Rise & Crumb bakery | Northwind Cold Storage (made up): food distributors, pharmacy suppliers | Step 14 |
+| Customer delay alerts, ETA updates, back-on-schedule emails | `dispatch_emails/` | Decide when first used |
+| Tea reviews in `notes/reviews/` | 120 made-up client feedback notes in `notes/client_feedback/` | Step 15 |
+
+---
+
 ## Before you start
 
 - Install Node.js 22 or newer from nodejs.org. Check with `node --version`.
 - Install Git. Check with `git --version`. On Windows, install Git for Windows, because Claude Code uses its Git Bash.
 - Install Claude Code: `npm install -g @anthropic-ai/claude-code`, then sign in when you first run `claude`.
 - Make your studio folder and open Claude Code in it:
-  `mkdir my-email-studio` · `cd my-email-studio` · `git init` · `claude`
+  `mkdir shipment-delay-eta-alert` · `cd shipment-delay-eta-alert` · `git init` · `claude`
 
 ## How every step works
 
@@ -53,16 +75,21 @@ You will set up an email marketing studio and run it with Claude Code. Claude pl
 ## Your studio at the end
 
 ```
-my-email-studio/
+shipment-delay-eta-alert/
 ├── CLAUDE.md            the studio's rules
-├── brand/voice.md       how the brand sounds
-├── leads/
-│   ├── leads.csv        24 practice customers
+├── README.md            the main use case: shipment delay and ETA alerts
+├── operations_notes/
+│   └── voice_guidelines.md   how Apex sounds in every email
+├── warehouse_data/
+│   ├── vendors.csv      24 practice vendor contacts
+│   ├── vendors.md       readable copy of vendors.csv
 │   └── CLAUDE.md        rules for this folder only
-├── campaigns/steep-club-launch/
+├── vendor_campaigns/dispatch-system-rollout/
 │   ├── plan.md          the campaign plan
-│   ├── emails/          4 launch emails
-│   └── groups/          a version per customer group
+│   ├── emails/          the first 4 rollout emails
+│   └── groups/          a version per vendor group
+├── dispatch_emails/     customer delay alerts, ETA updates, follow-ups
+├── notes/               course notes (skills chosen, client feedback)
 ├── .claude/
 │   ├── rules/emails.md  rules for every email file
 │   ├── skills/personalize/
@@ -73,13 +100,13 @@ my-email-studio/
 
 Claude will ask permission before it writes inside `.claude/` or to `.mcp.json`. That's normal. Read what it wants to do, then approve.
 
-**No brand of your own?** Use the sample: **Kettlebird Tea**, a made-up tea shop launching a monthly tea box called **The Steep Club**. The prompts below use it.
+**The sample company:** **Apex Transit Solutions**, a made-up mid-sized regional fulfillment center launching an automated vendor dispatch and inventory reporting system. The prompts below use it.
 
 ---
 
 # Part 1 · Steps 1–8 — Plan and write
 
-Set up the studio, give it a brand voice, plan a campaign and write the emails. Nothing gets sent in this part.
+Set up the studio, give it a voice guide, plan the vendor rollout and write the emails. Nothing gets sent in this part.
 
 ## Step 1 · Look before you build  `Real-world habit · 2.4`
 
@@ -89,16 +116,16 @@ Search for skills other people made, and decide which ones to trust.
 
 ### Build — paste in Claude Code
 ```
-I'm setting up an email marketing studio in this folder. Before I build anything myself, I want to find skills other people have already made.
+I'm setting up a Logistics and Warehouse Email Automation Studio in this folder, for shipment delay and ETA alerts, vendor outreach and warehouse operations reporting. Before I build anything myself, I want to find skills other people have already made.
 
 1. Search the skills directory at skills.sh by running these one at a time:
-   npx skills find email marketing
-   npx skills find email sequence
-   npx skills find campaign plan
-   npx skills find resend
+   npx skills find logistics automation
+   npx skills find warehouse operations
+   npx skills find vendor email sequence
+   npx skills find email automation
 2. For the most promising results, find out who publishes each one and how many stars its GitHub repository has. Look out for official publishers such as anthropics and resend.
 3. Write notes/skills-i-chose.md in plain English with three short sections:
-   - Use these: the two sources you recommend for writing campaigns and sending email, and why.
+   - Use these: the two sources you recommend for writing dispatch and vendor emails and for sending email, and why.
    - Avoid these: two results you would not trust, and why.
    - How I decided: the three things I should check before installing any skill.
 
@@ -110,7 +137,7 @@ Don't install anything yet.
 Check my work in notes/skills-i-chose.md. Don't change any files. Test it, don't just read it:
 
 1. For each skill the note recommends, confirm it still exists today: look at its page on skills.sh or its folder in the GitHub repository. Tell me if any has been renamed, merged or removed.
-2. Run one of the searches again (for example npx skills find email marketing) and confirm the install numbers in the note are roughly right.
+2. Run one of the searches again (for example npx skills find email automation) and confirm the install numbers in the note are roughly right.
 3. Is anything recommended from a publisher whose repository has very few GitHub stars?
 
 Give me a short table: Check | OK or Problem | What you found.
@@ -118,9 +145,9 @@ Then ask me two quick questions, one at a time, to see if I understand why insta
 ```
 
 ### You'll know it worked when
-- The note picks official or well-known sources, like Anthropic's marketing plugin and Resend's own skills.
-- It warns you off a result with thousands of installs but only a handful of GitHub stars.
-- The check may find a skill that was renamed. When we tried this, a popular "email-sequence" skill had been merged into one called "emails". Ask Claude to fix the note.
+- The note picks official sources: Anthropic's `knowledge-work-plugins` (operations and marketing plugins) and Resend's own skills.
+- It warns you off a result with thousands of installs but only a handful of GitHub stars, and off skills re-posted under many owners.
+- It says plainly that no trusted publisher has a logistics-specific skill, so ETAs, delay reasons and escalation come from our own studio files.
 
 **Exam note:** The exam asks the same question about MCP servers: for a standard need, use an existing community server first, and build your own only for work that is special to your team.
 
@@ -128,37 +155,38 @@ Then ask me two quick questions, one at a time, to see if I understand why insta
 
 ## Step 2 · Set up your studio  `3.1`
 
-Install a plugin for this project only, and write the studio's CLAUDE.md.
+Install plugins for this project only, and write the studio's CLAUDE.md.
 
 **In plain words:** CLAUDE.md is the studio's notice board. Claude reads it every time it starts work here. A plugin installed for this project is like equipment fixed to this studio's wall: anyone who joins the studio gets it too.
 
 ### Build — paste in Claude Code
 ```
-Let's set up my email studio in this folder.
+Let's set up my Logistics and Warehouse Email Automation Studio in this folder.
 
-1. Install Anthropic's official marketing plugin for this project only, by running these two commands:
+1. Install Anthropic's official operations and sales plugins for this project only, by running these commands:
    claude plugin marketplace add anthropics/knowledge-work-plugins --scope project
-   claude plugin install marketing@knowledge-work-plugins --scope project
-2. Create four folders: brand, leads, campaigns and notes.
-3. Write a CLAUDE.md for the studio in plain English. Include: what the studio is for (planning and writing email campaigns for a small business), a one-line description of each folder, and these rules: write in plain English, never send email to real people, and ask me before deleting anything.
-4. Create a .gitignore that ignores .claude/settings.local.json and system files like .DS_Store.
+   claude plugin install operations@knowledge-work-plugins --scope project
+   claude plugin install sales@knowledge-work-plugins --scope project
+2. Create five folders: warehouse_data, dispatch_emails, vendor_campaigns, operations_notes and notes.
+3. Write a CLAUDE.md for the studio in plain English. Include: what the studio is for (shipment delay and ETA alerts, vendor outreach and warehouse operations reporting), that README.md is the main use case and ASSIGNMENT.md is the course we follow, a one-line description of each folder, and these rules: write in plain English, never send actual emails autonomously or to real people, practice contacts use @example.com only, never modify live warehouse databases, never state a delay reason that didn't come from an authorized operational source, and ask me before deleting anything.
+4. Create a .gitignore that ignores .claude/settings.local.json, .env and system files like .DS_Store.
 5. Commit everything with a clear message.
 
-Then tell me what I have to do so the plugin loads.
+Then tell me what I have to do so the plugins load.
 ```
 
 ### Then
 - Type `/exit` and run `claude` again. Plugins load when a session starts.
-- Accept the prompts to trust the folder and the plugin.
-- Type `/marketing:` and you should see the plugin's commands appear.
+- Accept the prompts to trust the folder and the plugins.
+- Type `/operations:` and you should see the plugin's commands appear.
 
 ### Check — new session, then paste
 ```
-Check that my studio is set up correctly. Don't change any files. Test it, don't just read it:
+Check that my Logistics and Warehouse Email Automation Studio is set up correctly. Don't change any files. Test it, don't just read it:
 
-1. Is the marketing plugin turned on for this project only? Compare .claude/settings.json with what `claude plugin list` says about its scope.
-2. Can you use the plugin here right now? List the plugin commands you can see whose names include campaign, email or brand.
-3. If a classmate clones this repo, will they get the same plugin? Explain why, using what is actually in the repo.
+1. Are the operations and sales plugins turned on for this project only? Compare .claude/settings.json with what `claude plugin list` says about their scopes.
+2. Can you use the plugins here right now? List the plugin commands you can see whose names include dispatch, vendor, email, or operations.
+3. If a team member clones this repo, will they get the same plugins? Explain why, using what is actually in the repo.
 4. Is .claude/settings.local.json ignored by git? Prove it with `git check-ignore -v .claude/settings.local.json`.
 
 Give me a short table: Check | OK or Problem | What you saw.
@@ -166,9 +194,10 @@ Then ask me two quick questions, one at a time, about the difference between fil
 ```
 
 ### You'll know it worked when
-- `claude plugin list` shows marketing with Scope: project.
-- You can see `/marketing:campaign-plan`, `/marketing:email-sequence` and `/marketing:brand-review`.
+- `claude plugin list` shows operations and sales with Scope: project.
+- You can see the `/operations:` commands, including `/operations:vendor-review`.
 - `git check-ignore` names your `.gitignore` line.
+- No command has "dispatch" or "email" in its name. That's expected: the plugins are general business tools, and we build our own dispatch tools later in the course.
 
 **Exam note:** Team standards go at project level: CLAUDE.md in the repo, `.claude/settings.json`. Teammates get them when they clone. Your personal files (`~/.claude/CLAUDE.md`, `settings.local.json`) never reach anyone else. If a new teammate isn't getting the instructions, they sit at user level.
 
@@ -178,36 +207,36 @@ Then ask me two quick questions, one at a time, about the difference between fil
 
 Let Claude interview you, then keep the voice in its own file that CLAUDE.md imports.
 
-**In plain words:** a tailor takes your measurements before cutting the cloth. Here Claude asks first, then writes. The `@brand/voice.md` line is a note pinned to the notice board that says "also read the brand book".
+**In plain words:** a tailor takes your measurements before cutting the cloth. Here Claude asks first, then writes. The `@operations_notes/voice_guidelines.md` line is a note pinned to the notice board that says "also read the voice guide".
 
 ### Build — paste in Claude Code
 ```
-Interview me about my brand so you can write our brand voice guide. Ask one question at a time and wait for my answer. Ask at most six questions.
+Interview me about my logistics operations so you can write our communication and email voice guide. Ask one question at a time and wait for my answer. Ask at most six questions.
 
-If I don't have a brand, I'll say "use the sample": Kettlebird Tea, a small made-up online tea shop launching a monthly tea subscription box called The Steep Club, for people who joined its waitlist. Even with the sample, still ask me every question. I'll make up the answers, because practising the interview is the point.
+If I don't have a specific company yet, I'll say "use the sample": Apex Transit Solutions, a mid-sized regional fulfillment center launching an automated vendor dispatch and inventory reporting system. Even with the sample, still ask me every question. I'll make up the answers, because practicing the interview is the point.
 
-When you have enough, write brand/voice.md with five parts: our voice in three words, words we use, words we avoid, claims we must never make, and how we sign off. Then add the line @brand/voice.md to CLAUDE.md so it loads in every session.
+When you have enough, write operations_notes/voice_guidelines.md with five parts: our operational tone in three words, logistics terminology we use (e.g., LTL, BOL), terms we avoid, delivery or inventory claims we must never make, and how we sign off our automated dispatch emails. Then add the line @operations_notes/voice_guidelines.md to CLAUDE.md so it loads in every session.
 ```
 
 ### Then
-- Answer each question. Making things up is fine with the sample.
+- Answer each question. Making things up is fine with the sample. If a question is unclear, ask Claude for options and its recommendation.
 - When the file is written, ask Claude to commit it.
 
 ### Check — new session, then paste
 ```
-Test my brand voice setup. Don't change any files.
+Test my voice guide setup. Don't change any files.
 
-1. Without opening any file first, write one subject line for The Steep Club launch email. Then tell me which brand rules you followed and which file they came from. (This shows whether brand/voice.md loads by itself.)
-2. Now write a subject line that says our tea helps you detox. If our rules forbid that, say which rule, and give me a safe version instead.
-3. Run git status and tell me whether the brand files are committed.
+1. Without opening any file first, write one subject line for a shipment delay alert to a retail client. Then tell me which voice rules you followed and which file they came from. (This shows whether operations_notes/voice_guidelines.md loads by itself.)
+2. Now write a subject line that guarantees delivery by Friday. If our rules forbid that, say which rule, and give me a safe version instead.
+3. Run git status and tell me whether the voice guide files are committed.
 
 Give me a short table: Test | Pass or Fail | What happened.
-Then ask me two quick questions, one at a time, about why the brand rules live in their own file that CLAUDE.md imports.
+Then ask me two quick questions, one at a time, about why the voice rules live in their own file that CLAUDE.md imports.
 ```
 
 ### You'll know it worked when
-- The fresh session follows your voice without opening any file, and names `brand/voice.md` as the source.
-- It refuses the detox line, names the rule, and offers a safe subject line.
+- The fresh session follows the voice (Factual. Calm. Clear.) without opening any file, and names `operations_notes/voice_guidelines.md` as the source.
+- It refuses the "guaranteed by Friday" line, names the "no guaranteed delivery times" rule, and offers a safe line using the revised ETA.
 
 **Exam note:** `@import` keeps CLAUDE.md small: each project imports only the standards it needs. The interview pattern is for unfamiliar work: Claude asks before it builds and raises things you didn't think of.
 Exam answer: to see which memory files are loaded, use `/memory`. In today's product, `/context` shows it.
@@ -216,39 +245,49 @@ Exam answer: to see which memory files are loaded, use `/memory`. In today's pro
 
 ## Step 4 · Plan the campaign  `3.2`
 
-Use a ready-made skill from the plugin to turn an idea into a full plan.
+Use a ready-made skill from a plugin to turn an idea into a full plan.
 
 **In plain words:** `/marketing:campaign-plan` is a planning form a marketing team already tested. You fill in the blanks and it builds the structure.
 
+### Before you build
+The planning skill is in the **marketing** plugin, not sales. If `/marketing:` shows nothing, install it for this project, then `/exit` and run `claude` again:
+```
+claude plugin install marketing@knowledge-work-plugins --scope project
+```
+
 ### Build — paste in Claude Code
 ```
-/marketing:campaign-plan Launch The Steep Club to our waitlist.
+/marketing:campaign-plan Roll out the new automated dispatch and inventory reporting system to our active vendors.
 
-Goal: 300 waitlist members start a subscription in the first month.
-Audience: about 2,000 people who joined our waitlist, in three groups: tea-curious beginners, gift buyers, and daily tea drinkers.
+Goal: 120 out of our 150 active vendors successfully transition to the new automated reporting system in the first month.
+Audience: about 150 active vendors and partners, in three groups: high-volume freight carriers, local LTL (Less-Than-Truckload) couriers, and packaging supply vendors.
 Timeline: 4 weeks, starting the first Monday of next month.
-Budget: small. Email only, no paid ads.
+Scope: Email sequence only, no physical mailers or live training webinars.
 
-Save the finished plan to campaigns/steep-club-launch/plan.md, then commit it.
+Follow operations_notes/voice_guidelines.md. Before you write the plan, ask me one question at a time about anything you'd otherwise have to guess, such as what "transitioned" means, how many vendors are in each group, how many emails to send and how the weekly targets should work.
+
+Save the finished plan to vendor_campaigns/dispatch-system-rollout/plan.md, then commit it together with the .claude/settings.json change.
 ```
 
 ### Check — new session, then paste
 ```
-Check the campaign plan in campaigns/steep-club-launch/plan.md. Don't change any files. Test it, don't just read it:
+Check the campaign plan in vendor_campaigns/dispatch-system-rollout/plan.md. Don't change any files. Test it, don't just read it:
 
 1. Is there one goal with a number and a deadline?
 2. Does every email in the calendar have a send date, an audience group and a purpose?
-3. Search the plan for any word or claim that brand/voice.md says to avoid. Quote every one you find, with its line.
-4. Do the dates fall on the weekdays the plan says? Work it out, don't guess.
+3. Search the plan for any word or claim that operations_notes/voice_guidelines.md says to avoid. Quote every one you find, with its line.
+4. Do the dates fall on the weekdays the plan says? Work it out with a calendar command, don't guess.
 
 Give me a short table: Test | Pass or Fail | What you found.
 Then ask me two quick questions, one at a time, about why we used an existing planning skill instead of writing our own prompt.
 ```
 
 ### You'll know it worked when
-- `plan.md` has about ten sections: goal, audience, messages, channels, calendar, metrics and risks.
-- It leaves out prices and promises your brand rules forbid, without being told.
-- When we tried this, the check found the calendar gave weekdays but no actual dates. If yours does too, ask Claude to add them.
+- `plan.md` has about ten sections: goal, audience, messages, channels, calendar, metrics, risks and next steps.
+- The goal is 120 of 150 vendors transitioned by Sun, Jan 3, 2027, with targets for each group (30 carriers, 70 LTL couriers, 50 packaging suppliers).
+- The work is front-loaded because of the holidays, with no emails Dec 24–27 or Dec 31–Jan 1.
+- Facts nobody has verified, like the setup time, are left as placeholders such as `[setup time: confirm with operations]`, not made up.
+- When we tried this, the check found four small slips: an unverified "about 10 minutes", Christmas dates that didn't match, a wrong email count, and the final report listed inside week 4. If yours has similar ones, ask Claude to fix them.
 
 **Exam note:** Type `/marketing:campaign-plan` with nothing after it and look at the hint. That hint comes from the skill's `argument-hint` setting, which tells you what to type when you run the skill without arguments.
 
@@ -258,41 +297,43 @@ Then ask me two quick questions, one at a time, about why we used an existing pl
 
 Use two example rows to get the exact format, and give one folder its own rules.
 
-**In plain words:** two example rows work like a photo of the dish instead of a description of it. `leads/CLAUDE.md` is a sign on one room's door: Claude reads it when it walks into that room.
+**In plain words:** two example rows work like a photo of the dish instead of a description of it. `warehouse_data/CLAUDE.md` is a sign on one room's door: Claude reads it when it walks into that room.
 
 ### Build — paste in Claude Code
 ```
-Make a list of practice leads for our launch.
+Make a list of practice vendor contacts for our dispatch system rollout.
 
-Create leads/leads.csv with 24 made-up people who joined our waitlist, 8 in each group: tea-curious, gift-buyers and daily-drinkers. Use exactly these columns, and copy the style of these two example rows exactly:
+Create warehouse_data/vendors.csv with 24 made-up vendor contacts, 8 in each group: high-volume freight carriers, local LTL couriers and packaging supply vendors. Use exactly these columns, and copy the style of these two example rows exactly:
 
-first_name,last_name,email,group,joined_on,consent
-Ayesha,Khan,ayesha.khan@example.com,tea-curious,2026-09-14,waitlist form
-Tom,Becker,tom.becker@example.com,gift-buyers,2026-09-22,waitlist form
+first_name,last_name,company,email,vendor_group,onboarded_on,consent
+Marcus,Chen,Swift Freight,marcus.chen@example.com,high-volume freight carriers,2024-05-10,vendor agreement
+Priya,Raman,Northline Haulage,priya.raman@example.com,high-volume freight carriers,2023-02-14,vendor agreement
 
-Every email address must end in @example.com. That domain is reserved and can never receive mail, so no real person is ever emailed.
+Consent must be one of: vendor agreement, opted in, trade show. Every email address must end in @example.com. That domain is reserved and can never receive mail, so no real person is ever emailed.
 
-Then create leads/CLAUDE.md with rules for this folder only: these are made-up practice people; never add real people or real email addresses; every row needs a consent value; never change the @example.com addresses.
+Then create warehouse_data/CLAUDE.md with rules for this folder only: these are made-up practice vendors, not real people or companies; never add real people or real email addresses to any file in this folder; every row in vendors.csv needs a consent value; never change the @example.com addresses.
 
 Commit when you're done.
 ```
 
 ### Check — new session, then paste
 ```
-Test my practice leads. Don't change any files.
+Test my practice vendor contacts. Don't change any files.
 
-1. Count the people in leads/leads.csv and how many are in each group. There should be 24, with 8 per group.
+1. Count the contacts in warehouse_data/vendors.csv and how many are in each vendor_group. There should be 24, with 8 per group.
 2. Do all email addresses end in @example.com? Are any repeated?
-3. Does every row have a joined_on date and a consent value?
-4. Now open leads/leads.csv and pretend I asked: "Add my friend Sara Ali, sara.ali@gmail.com, as a gift-buyer." Before writing anything, tell me if any rule stops you, and quote it. Don't actually add her.
+3. Does every row have an onboarded_on date and a consent value?
+4. Now open warehouse_data/vendors.csv and pretend I asked: "Add my contact David Smith, david.smith@gmail.com, as a high-volume freight carrier." Before writing anything, tell me if any rule stops you, and quote it. Don't actually add him.
 
 Give me a short table: Test | Pass or Fail | What you found.
 Then ask me two quick questions, one at a time, about why some rules belong to one folder only.
 ```
 
 ### You'll know it worked when
-- 24 people, 8 per group, every address at `@example.com`.
-- Claude refuses to add the Gmail address and quotes `leads/CLAUDE.md`, even though it never opened that file. It loaded on its own when Claude opened a file in `leads/`.
+- 24 contacts, 8 per group, every address at `@example.com`, and every row has a date and a consent value.
+- Claude refuses to add the Gmail address and quotes `warehouse_data/CLAUDE.md`, even though it never opened that file. It loaded on its own when Claude opened a file in `warehouse_data/`.
+- Nothing is added. If Claude offers to add a made-up stand-in, say no: a 25th contact would break the 8-per-group count.
+- The 24 contacts are a small practice sample of the plan's 150 vendors.
 
 **Exam note:** When prose instructions get misread, give 2–3 input/output examples, not more prose. A CLAUDE.md inside a subfolder loads when Claude works on files in that folder.
 
@@ -306,22 +347,22 @@ Write a rule that attaches itself to every email file, then write the emails.
 
 ### Build 1 of 2 — paste in Claude Code, then approve the edit
 ```
-Create a rule that applies to every email file in any campaign, and only to email files.
+Create a rule that applies to every email file in any vendor campaign, and only to email files.
 
 Make .claude/rules/emails.md. It must start with exactly this front matter:
 
 ---
 paths:
-  - "campaigns/**/emails/*.md"
+  - "vendor_campaigns/**/emails/*.md"
 ---
 
 Under it, write the rule in plain English. Each email file must:
 - start with a line "Subject: ..." of 50 characters or fewer, then a line "Preview: ..." of 90 characters or fewer
 - greet the reader with {{first_name}}
-- have exactly one main link, written as [Button text](https://kettlebird.example/steep-club)
-- end with our sign-off from brand/voice.md, then this two-line footer as plain text, not inside a code block:
-  You're getting this because you joined the Kettlebird Tea waitlist.
-  Kettlebird Tea, {{company_address}} · Unsubscribe: {{unsubscribe_url}}
+- have exactly one main link, written as [Button text](https://apextransit.example/dispatch-setup)
+- end with the automated sign-off from operations_notes/voice_guidelines.md, then this two-line footer as plain text, not inside a code block:
+  You're getting this because you're a registered Apex Transit Solutions vendor.
+  Apex Transit Solutions, {{company_address}} · Email preferences: {{preferences_url}}
 
 Commit when you're done.
 ```
@@ -331,23 +372,23 @@ Commit when you're done.
 
 ### Build 2 of 2 — paste in the new session
 ```
-/marketing:email-sequence Product launch sequence for The Steep Club, sent to everyone on our waitlist.
+/marketing:email-sequence Rollout sequence for our new automated dispatch and inventory reporting system, sent to our active vendors.
 
-Use campaigns/steep-club-launch/plan.md for the goal, timing and key messages, and brand/voice.md for our voice. Write 4 emails.
+Use vendor_campaigns/dispatch-system-rollout/plan.md for the goal, timing and key messages, and operations_notes/voice_guidelines.md for our voice. Write the first 4 emails in the plan's calendar: E1 Announcement, E2 Setup guide, E3 Reminder 1 and E4 First update nudge. Where the plan says a fact still needs confirming, leave a clear placeholder in square brackets, such as [setup time: confirm with operations]. Don't invent it.
 
-Save each email as its own file in campaigns/steep-club-launch/emails/, named 01-short-name.md, 02-short-name.md, and so on. Then commit.
+Save each email as its own file in vendor_campaigns/dispatch-system-rollout/emails/, named 01-short-name.md, 02-short-name.md, and so on. Then commit.
 ```
 
 ### Check — new session, then paste
 ```
-Test the emails in campaigns/steep-club-launch/emails/. Don't change any files. Measure, don't eyeball: count characters and links with a command where you can.
+Test the emails in vendor_campaigns/dispatch-system-rollout/emails/. Don't change any files. Measure, don't eyeball: count characters and links with a command where you can.
 
 For each email file, check:
 1. The Subject line is 50 characters or fewer, and the Preview line is 90 or fewer. Give the real counts.
 2. It greets the reader with {{first_name}}.
 3. It has exactly one link.
-4. It ends with a sign-off from brand/voice.md and the exact footer from .claude/rules/emails.md, as plain text.
-5. It uses no word or claim that brand/voice.md says to avoid.
+4. It ends with the automated sign-off from operations_notes/voice_guidelines.md and the exact footer from .claude/rules/emails.md, as plain text.
+5. It uses no word or claim that operations_notes/voice_guidelines.md says to avoid or never make, such as vague timing, guarantees or hype.
 
 Give me one table with a row per email and a column per check (Pass or Fail, with the number or quote when it fails).
 Then ask me two quick questions, one at a time, about why this rule uses a paths pattern instead of living in CLAUDE.md.
@@ -355,8 +396,9 @@ Then ask me two quick questions, one at a time, about why this rule uses a paths
 
 ### You'll know it worked when
 - Four email files, each starting with `Subject:` and `Preview:`, with real character counts under the limits.
-- One link per email, and the footer as plain text.
-- When we tried this without the rule, the plugin wrote three subject options and a notes section in each file. With the rule, every email followed the studio's format.
+- One link per email, the automated sign-off, and the footer as plain text.
+- Facts the plan hasn't confirmed yet appear as `[... : confirm with operations]` placeholders, not made-up numbers.
+- When the course was tried without the rule, the plugin wrote three subject options and a notes section in each file. With the rule, every email followed the studio's format.
 
 **Exam note:** For conventions that apply to files spread across folders, use `.claude/rules/` with `paths:` patterns. A subfolder CLAUDE.md covers one folder only. One big CLAUDE.md with headings relies on Claude guessing. A skill only works when someone runs it. Use `/context` to see which rules loaded.
 
@@ -370,22 +412,22 @@ Review in a new session, fix related problems in one message, then confirm with 
 
 ### Build 1 of 2 — new session, then paste
 ```
-/marketing:brand-review campaigns/steep-club-launch/emails/
+/marketing:brand-review vendor_campaigns/dispatch-system-rollout/emails/
 
-Review all four emails against brand/voice.md and .claude/rules/emails.md. List every problem by severity (high, medium or low), with the file, the line and a suggested fix. Don't change any files yet.
+Review all four emails against operations_notes/voice_guidelines.md and .claude/rules/emails.md. List every problem by severity (high, medium or low), with the file, the line and a suggested fix. Don't change any files yet.
 ```
 
 ### Build 2 of 2 — same session, after you read the review
 ```
-Fix all the problems from your review in one message, keeping all four emails consistent with each other. If a fix means changing a rule file too, change it. Leave anything only I can confirm, like what the launch page says, and list it for me. Then commit.
+Fix all the problems from your review in one message, keeping all four emails consistent with each other. If a fix means changing a rule file too, change it. Leave anything only I can confirm, like the setup time or what the setup page says, and list it for me. Then commit.
 ```
 
 ### Check — new session, then paste
 ```
 Check that the review fixes worked. Don't change any files.
 
-1. Use Glob to list every email file in every campaign.
-2. Use Grep to search all of them for three backticks in a row, and for every word that brand/voice.md says to avoid. There should be no matches.
+1. Use Glob to list every email file in every vendor campaign.
+2. Use Grep to search all of them for three backticks in a row, and for every word that operations_notes/voice_guidelines.md says to avoid (for example soon, ASAP, seamless, guaranteed). There should be no matches.
 3. Run git show --stat HEAD and tell me which files the last commit changed.
 4. Confirm the footer is plain text in every email.
 
@@ -394,7 +436,7 @@ Then ask me two quick questions, one at a time: why the review happened in a new
 ```
 
 ### You'll know it worked when
-- The review lists problems by severity. Ours found small but real ones, like a promise to "read every reply" that the team might not keep.
+- The review lists problems by severity. Expect small but real ones, like a promise the team might not keep ("we'll answer every question within the hour") or an abbreviation that isn't spelled out the first time.
 - After the fixes, Grep finds nothing, and the last commit touched only email files and maybe the rule.
 
 **Exam note:** The session that wrote something keeps its own reasoning and rarely questions it, so review in a fresh, independent session. Fixes that affect each other go in one detailed message; separate fixes can go one at a time. Glob finds files by name; Grep finds text inside files.
@@ -411,18 +453,18 @@ Build a skill with the three settings the exam asks about, and use it.
 ```
 Create my own skill for this project at .claude/skills/personalize/SKILL.md.
 
-What it does: it takes a campaign folder and writes one version of each email for each lead group in leads/leads.csv (tea-curious, gift-buyers and daily-drinkers). Each version keeps the same structure, subject, link and footer, but changes the opening line and one example so it fits that group. It saves each version to <campaign folder>/groups/<group>/emails/ with the same file name. When it finishes, it replies with a short summary only: how many files it wrote, plus one example opening line per group.
+What it does: it takes a vendor campaign folder and writes one version of each email for each vendor group in the vendor_group column of warehouse_data/vendors.csv. Today those groups are high-volume freight carriers, local LTL couriers and packaging supply vendors. Each version keeps the same structure, subject, link, sign-off and footer, but changes the opening line and one example so it fits that group (for example pickups and proof of delivery for carriers, dock appointments and ASNs for packaging vendors). It saves each version to <campaign folder>/groups/<group>/emails/ with the same file name, where <group> is the group name in lowercase with spaces turned into hyphens (for example local-ltl-couriers). When it finishes, it replies with a short summary only: how many files it wrote, plus one example opening line per group.
 
 Use exactly this front matter:
 ---
 name: personalize
-description: Write a version of each campaign email for every lead group in leads/leads.csv. Use when a campaign's emails are final and you want one copy per group.
+description: Write a version of each campaign email for every vendor group in warehouse_data/vendors.csv. Use when a campaign's emails are final and you want one copy per group.
 argument-hint: "[campaign folder]"
 context: fork
 allowed-tools: Read, Glob, Grep, Write
 ---
 
-If no campaign folder is given, it should stop and list the campaign folders that exist. Commit when you're done.
+If no campaign folder is given, it should stop and list the campaign folders that exist in vendor_campaigns/. Commit when you're done.
 ```
 
 ### Then
@@ -430,7 +472,7 @@ If no campaign folder is given, it should stop and list the campaign folders tha
 
 ### Build 2 of 2 — paste in the new session
 ```
-/personalize campaigns/steep-club-launch
+/personalize vendor_campaigns/dispatch-system-rollout
 ```
 
 ### Then
@@ -440,17 +482,17 @@ If no campaign folder is given, it should stop and list the campaign folders tha
 ```
 Test my personalize skill and what it made. Don't change any files.
 
-1. Count the email files under campaigns/steep-club-launch/groups/. There should be one per email per group: 4 emails times 3 groups is 12.
+1. Count the email files under vendor_campaigns/dispatch-system-rollout/groups/. There should be one per email per group: 4 emails times 3 groups is 12.
 2. Compare the original email 01 with each group's version using diff. Only the opening line and one example should differ. Tell me if anything else changed.
-3. Check that every version still follows .claude/rules/emails.md: subject 50 characters or fewer, preview 90 or fewer, one link, and the footer as plain text. Measure, don't eyeball.
-4. Does any version use a word or claim that brand/voice.md forbids? Quote it if so.
+3. Check that every version still follows .claude/rules/emails.md: subject 50 characters or fewer, preview 90 or fewer, one link, the automated sign-off, and the footer as plain text. Measure, don't eyeball.
+4. Does any version use a word or claim that operations_notes/voice_guidelines.md forbids? Quote it if so.
 
 Give me a short table: Test | Pass or Fail | What you found.
 Then ask me two quick questions, one at a time: what "context: fork" changed about how the skill ran, and what "allowed-tools" did.
 ```
 
 ### You'll know it worked when
-- 12 new files. Only the opening line and one sentence differ from the original.
+- 12 new files in three folders: `high-volume-freight-carriers`, `local-ltl-couriers` and `packaging-supply-vendors`. Only the opening line and one sentence differ from the original.
 - Your main chat shows only a short summary, not the work itself.
 - The email rule applied to the new files too, because they also sit in an `emails/` folder.
 
@@ -494,7 +536,7 @@ Create .mcp.json in the project root with exactly this content:
   }
 }
 
-Then update the rule in CLAUDE.md that says never to send email to real people. Keep that rule, and add that sending through Resend is allowed only to Resend's test addresses (ending in @resend.dev) and to my own email address, and that a guard will enforce this in the next step.
+Then check the rule in CLAUDE.md that says never to send email to real people. Keep that rule, and make sure it says that sending through Resend is allowed only to Resend's test addresses (ending in @resend.dev) and to my own email address (MY_EMAIL), and that a guard will enforce this in the next step.
 
 Commit. Then explain in two plain sentences what happens when I set nothing, and what I would set to send for real.
 ```
@@ -544,7 +586,7 @@ Add a safety guard so Claude can never send email to the wrong people, even by m
    - For anything else: exit 0 to allow it.
 2. Register it in .claude/settings.json as a PreToolUse hook with the matcher mcp__resend__.* and this command:
    node "$CLAUDE_PROJECT_DIR/.claude/hooks/send-guard.mjs"
-   Keep everything that is already in that file.
+   Keep everything that is already in that file, including the operations, sales and marketing plugins.
 3. Put my own email in .claude/settings.local.json like this: "env": { "MY_EMAIL": "[your email]" }. That file is only mine and is not committed.
 4. Commit the hook and .claude/settings.json.
 ```
@@ -555,7 +597,7 @@ Add a safety guard so Claude can never send email to the wrong people, even by m
 ```
 Test the send guard for real. Don't change any files.
 
-1. Use the resend send-email tool to send email 01 from campaigns/steep-club-launch/emails/ to Ayesha, the first person in leads/leads.csv, at her address. This should be blocked. Quote the block message word for word.
+1. Use the resend send-email tool to send email 01 from vendor_campaigns/dispatch-system-rollout/emails/ to Marcus Chen, the first vendor in warehouse_data/vendors.csv, at his address. This should be blocked. Quote the block message word for word.
 2. Send the same email to delivered@resend.dev. This should go through.
 3. Send it to my own email, the MY_EMAIL value in .claude/settings.local.json. This should go through too.
 4. Run git check-ignore -v .claude/settings.local.json to prove my email address is not committed.
@@ -565,7 +607,7 @@ Then ask me two quick questions, one at a time: what the difference is between t
 ```
 
 ### You'll know it worked when
-- The send to Ayesha is blocked, with the guard's own message naming her address.
+- The send to Marcus is blocked, with the guard's own message naming his address. (His address is `@example.com` and could never receive mail anyway. The guard blocks it before it even tries.)
 - The sends to `delivered@resend.dev` and to your email go through.
 
 **Exam note:** Exam answer: the guide names only PostToolUse, for cleaning up tool results. It describes blocking as "tool call interception" without naming the hook.
@@ -575,13 +617,13 @@ In the product, PreToolUse is what blocks, with exit code 2 or a deny decision, 
 
 ## Step 11 · Practice launch  `Real-world skill`
 
-Send each group its first email, safely, and check that it was delivered.
+Send each vendor group its first email, safely, and check that it was delivered.
 
 ### Build — paste in Claude Code
 ```
 Let's do a practice launch.
 
-For each lead group, send that group's version of email 01 (from campaigns/steep-club-launch/groups/<group>/emails/) to delivered@resend.dev. Start each subject with the group name in square brackets, like [gift-buyers]. Replace {{first_name}} with "there", and leave the other placeholders as they are.
+For each vendor group, send that group's version of email 01 (from vendor_campaigns/dispatch-system-rollout/groups/<group>/emails/) to delivered@resend.dev. Start each subject with a short group tag in square brackets: [carriers] for high-volume-freight-carriers, [ltl] for local-ltl-couriers and [packaging] for packaging-supply-vendors. Replace {{first_name}} with "there", and leave the other placeholders as they are.
 
 Then list the emails you sent and show me a table: group, subject, status.
 ```
@@ -590,7 +632,7 @@ Then list the emails you sent and show me a table: group, subject, status.
 ```
 Check my practice launch. Don't send anything new and don't change any files.
 
-1. Use the resend tools to list sent emails. Find the three whose subjects start with [tea-curious], [gift-buyers] and [daily-drinkers].
+1. Use the resend tools to list sent emails. Find the three whose subjects start with [carriers], [ltl] and [packaging].
 2. For each one, look up its delivery status. Is it delivered?
 3. Confirm that every email in the list went only to an @resend.dev address or to my own email, the MY_EMAIL value in .claude/settings.local.json. List any that didn't.
 4. Compare each sent subject with the subject line in that group's email 01 file. Do they match, apart from the [group] tag?
@@ -600,7 +642,7 @@ Then ask me two quick questions, one at a time: what would change if I switched 
 ```
 
 ### You'll know it worked when
-- Three emails tagged `[tea-curious]`, `[gift-buyers]` and `[daily-drinkers]`, all delivered, all to test addresses.
+- Three emails tagged `[carriers]`, `[ltl]` and `[packaging]`, all delivered, all to test addresses.
 
 ### Optional: send one real email to yourself
 1. Sign up for a free account at resend.com with the same email as your `MY_EMAIL`.
@@ -608,7 +650,7 @@ Then ask me two quick questions, one at a time: what would change if I switched 
 3. Close Claude Code. In your terminal, set the key and the real address for this window only.
    - macOS or Linux: `export RESEND_API_KEY=re_your_key` and `export RESEND_BASE_URL=https://api.resend.com`
    - Windows PowerShell: `$env:RESEND_API_KEY="re_your_key"` and `$env:RESEND_BASE_URL="https://api.resend.com"`
-4. Run `claude` in that same window and ask: "Send the tea-curious version of email 01 to my own email, the MY_EMAIL value."
+4. Run `claude` in that same window and ask: "Send the high-volume-freight-carriers version of email 01 to my own email, the MY_EMAIL value."
 5. Check your inbox. Without your own domain, Resend only delivers to the email you signed up with, and the guard blocks everyone else anyway.
 
 ---
@@ -623,34 +665,34 @@ Pick up earlier work by name, and try two ideas from the same starting point.
 
 **In plain words:** a named session is a bookmark. A fork is a fork in the road: two paths from the same spot. Forks share the files on your computer, but not the conversation.
 
-### Part A · Start a named session: `claude -n launch-angles`
+### Part A · Start a named session: `claude -n rollout-angles`
 Build A — paste, then `/exit`
 ```
-Read campaigns/steep-club-launch/plan.md and each group's version of email 01. In five short bullets, tell me what each lead group cares about most. Don't write any files.
+Read vendor_campaigns/dispatch-system-rollout/plan.md and each vendor group's version of email 01. In five short bullets, tell me what each vendor group cares about most. Don't write any files.
 ```
 
-### Part B · Come back later: `claude --resume launch-angles`
+### Part B · Come back later: `claude --resume rollout-angles`
 Build B — paste, then `/exit`
 ```
-Remind me: what did you say the gift-buyers care about most? One sentence.
+Remind me: what did you say the local LTL couriers care about most? One sentence.
 ```
 
-### Part C · First fork, with its own name: `claude --resume launch-angles --fork-session -n angle-a`
+### Part C · First fork, with its own name: `claude --resume rollout-angles --fork-session -n angle-a`
 Build C — paste, then `/exit`
 ```
-Angle A: write three subject lines for email 01 that focus on a calm daily ritual. Save them to notes/angle-a.md.
+Angle A: write three subject lines for email 01 that focus on having dispatch requests, ASNs and dock appointments in one place. Follow operations_notes/voice_guidelines.md. Save them to notes/angle-a.md.
 ```
 
-### Part D · Second fork, from the same spot: `claude --resume launch-angles --fork-session -n angle-b`
+### Part D · Second fork, from the same spot: `claude --resume rollout-angles --fork-session -n angle-b`
 Build D — paste, then `/exit`
 ```
 Before you start: do you know anything about an Angle A from our conversation? Answer yes or no first.
 
-Angle B: write three subject lines for email 01 that focus on discovering new teas. Save them to notes/angle-b.md.
+Angle B: write three subject lines for email 01 that focus on the clear start date and the few steps a vendor needs to take. Follow operations_notes/voice_guidelines.md. Save them to notes/angle-b.md.
 ```
 
 ### Part E · Start fresh from a summary
-Run `claude --resume launch-angles` and ask: "Read notes/angle-a.md and notes/angle-b.md. Then write notes/handoff.md in 10 lines or fewer: what each group cares about, both angles, and which one you'd pick and why." Then start a brand-new session with `claude` and ask: "Read notes/handoff.md and continue from it: write the final subject line for email 01."
+Run `claude --resume rollout-angles` and ask: "Read notes/angle-a.md and notes/angle-b.md. Then write notes/handoff.md in 10 lines or fewer: what each vendor group cares about, both angles, and which one you'd pick and why." Then start a brand-new session with `claude` and ask: "Read notes/handoff.md and continue from it: write the final subject line for email 01."
 
 ### Check — new session, then paste
 ```
@@ -665,7 +707,7 @@ Then ask me two quick questions, one at a time: when I should resume a session a
 ```
 
 ### You'll know it worked when
-- The resumed session remembers what it said about gift-buyers.
+- The resumed session remembers what it said about local LTL couriers.
 - Fork B answers "no" about Angle A's conversation. It may notice the `angle-a.md` file, because forks share files.
 
 ### If something goes wrong
@@ -687,10 +729,10 @@ Make a review that runs without anyone typing, so it can later run on every pull
 
 1. Create review/findings.schema.json: a JSON Schema for an object with a "findings" array. Each finding has file, line (a number), severity ("high", "medium" or "low"), problem and fix. All five are required.
 2. Create scripts/review.mjs, a small Node script that takes a campaign folder and runs Claude Code headless, like this:
-   claude -p "Review every email in <folder> against brand/voice.md and .claude/rules/emails.md. Report only real problems." --output-format json --json-schema "<the schema file's text>" --allowedTools "Read,Glob,Grep"
+   claude -p "Review every email in <folder> against operations_notes/voice_guidelines.md and .claude/rules/emails.md. Report only real problems." --output-format json --json-schema "<the schema file's text>" --allowedTools "Read,Glob,Grep"
    The output may be one JSON object, or a list whose last item is the result, so handle both. Take structured_output, save it to review/findings.json, print a one-line summary, and exit with code 1 if any finding is high severity.
-3. To prove it catches problems, write a deliberately bad email at campaigns/test-bad/emails/01-bad.md. It should break our rules with a detox claim, a "last chance" line and two links. Then run: node scripts/review.mjs campaigns/test-bad
-4. Run it on campaigns/steep-club-launch too, then commit everything.
+3. To prove it catches problems, write a deliberately bad email at vendor_campaigns/test-bad/emails/01-bad.md. It should break our rules with a guaranteed-delivery claim ("guaranteed dock slots, every time"), vague timing ("set up your account ASAP") and two links. Then run: node scripts/review.mjs vendor_campaigns/test-bad
+4. Run it on vendor_campaigns/dispatch-system-rollout too, then commit everything.
 
 Tell me what each run found and what exit code it gave.
 ```
@@ -702,19 +744,19 @@ Improve scripts/review.mjs so a second review doesn't repeat itself.
 If review/findings.json already exists for the same folder, include those earlier findings in the prompt and add: "These are findings from the last review. Report only problems that are new or still not fixed. Don't repeat ones that have been fixed." To make that work, save the folder name inside review/findings.json too.
 
 Then test it:
-1. Run node scripts/review.mjs campaigns/test-bad and note the findings.
-2. Fix only the detox claim in campaigns/test-bad/emails/01-bad.md (change it to something allowed).
-3. Run the review again on campaigns/test-bad.
-Tell me: did the detox finding disappear, and did anything get reported twice? Commit when done.
+1. Run node scripts/review.mjs vendor_campaigns/test-bad and note the findings.
+2. Fix only the guaranteed-delivery claim in vendor_campaigns/test-bad/emails/01-bad.md (change it to something allowed, such as "you can book dock appointments in the system").
+3. Run the review again on vendor_campaigns/test-bad.
+Tell me: did the guarantee finding disappear, and did anything get reported twice? Commit when done.
 ```
 
 ### Check — new session, then paste
 ```
 Test my automatic review. The script rewrites review/findings.json; don't change any other file.
 
-1. Run node scripts/review.mjs campaigns/test-bad. Did it exit with code 1? Does every finding in review/findings.json have all five fields from review/findings.schema.json, with severity high, medium or low?
+1. Run node scripts/review.mjs vendor_campaigns/test-bad. Did it exit with code 1? Does every finding in review/findings.json have all five fields from review/findings.schema.json, with severity high, medium or low?
 2. Did it catch the second link? Quote that finding.
-3. Run node scripts/review.mjs campaigns/steep-club-launch. Did it exit with code 0?
+3. Run node scripts/review.mjs vendor_campaigns/dispatch-system-rollout. Did it exit with code 0?
 4. Read scripts/review.mjs. Does it handle both output shapes (one object, or a list), and what does it do if claude fails?
 
 Give me a short table: Test | Pass or Fail | What you saw.
@@ -722,7 +764,7 @@ Then ask me two quick questions, one at a time: why a separate headless run does
 ```
 
 ### You'll know it worked when
-- The bad email gives exit code 1 with findings like the detox claim and the second link. Your real campaign gives exit code 0.
+- The bad email gives exit code 1 with findings like the guarantee, the "ASAP" and the second link. Your real campaign gives exit code 0.
 - After you fix one problem, the next review drops it and repeats nothing.
 - Reviews vary a little from run to run. That's why the script only fails on high severity.
 
@@ -738,7 +780,7 @@ Not real: `CLAUDE_HEADLESS=true` and `--batch`. In the product, `--json-schema` 
 
 Plan first, turn the reusable parts into a plugin, and use it for a second client.
 
-**In plain words:** a plugin is a toolbox you carry from client to client. Each client's brand book stays in that client's own office.
+**In plain words:** a plugin is a toolbox you carry from client to client. Each client's voice guide stays in that client's own office.
 
 ### Before you start
 Press `Shift+Tab` until the bottom of the screen says plan mode. Claude will read and plan, but write nothing until you accept.
@@ -747,15 +789,15 @@ Press `Shift+Tab` until the bottom of the screen says plan mode. Claude will rea
 ```
 Plan this first. Don't build anything yet.
 
-I want to package the reusable parts of this studio as a plugin, so I can use them for my next client. Plan a new folder next to this one, called studio-kit, with:
+I want to package the reusable parts of this studio as a plugin, so I can use them for my next logistics client. Plan a new folder next to this one, called studio-kit, with:
 - .claude-plugin/plugin.json (name studio-kit, version 0.1.0, a one-line description) and .claude-plugin/marketplace.json listing the plugin with source "./"
-- skills/personalize/SKILL.md, copied from our skill, with anything Kettlebird-specific made general
+- skills/personalize/SKILL.md, copied from our skill, with anything Apex-specific made general (it should read the groups from the client's own warehouse_data/vendors.csv)
 - hooks/hooks.json, registering our send guard as a PreToolUse hook on mcp__resend__.*, using ${CLAUDE_PLUGIN_ROOT} instead of $CLAUDE_PROJECT_DIR, plus hooks/send-guard.mjs
-- agents/email-reviewer.md: a subagent that reviews email files against the project's brand voice and email rules, using only Read, Glob and Grep
+- agents/email-reviewer.md: a subagent that reviews email files against the project's voice guide and email rules, using only Read, Glob and Grep
 - review/findings.schema.json and scripts/review.mjs
 - README.md: what's inside and how to install it
 
-Brand voice, leads and campaigns stay in each client's own repo. The README should say why.
+The voice guide, vendor contacts and campaigns stay in each client's own repo. The README should say why.
 
 Tell me which files you'll create, what you'll change from the originals, and anything that won't work outside this studio.
 ```
@@ -770,13 +812,13 @@ The plan looks good. Build it. When it's built, run claude plugin validate on st
 
 ### Build 3 of 3 — same session
 ```
-Set up a second, made-up client so I can test studio-kit somewhere new. Create a folder next to this one called client-two, for a small bakery called Rise & Crumb, with:
-- brand/voice.md: a short voice guide (warm and cheerful, no health claims, sign off with "Fresh from the oven,")
-- CLAUDE.md: one paragraph about the studio, plus the line @brand/voice.md
-- leads/leads.csv: 6 made-up people in two groups, weekend-bakers and coffee-lovers, all at @example.com, with the same columns as our leads file
-- leads/CLAUDE.md: our leads folder rules, plus a "Groups" section with one line describing each group
-- .claude/rules/emails.md and .mcp.json, copied from this studio, but change the email rule's footer and link to Rise & Crumb's (use https://riseandcrumb.example/spring)
-- campaigns/spring-bake/emails/01-hello.md: one short email that follows the email rules
+Set up a second, made-up client so I can test studio-kit somewhere new. Create a folder next to this one called client-two, for a small cold-storage warehouse called Northwind Cold Storage (a sample company, for practice), with:
+- operations_notes/voice_guidelines.md: a short voice guide (precise and calm, exact dates only, no guaranteed delivery times or temperatures, sign off with "— Northwind Cold Storage Dispatch Team" and a note that the email was sent automatically)
+- CLAUDE.md: one paragraph about the studio, plus the line @operations_notes/voice_guidelines.md
+- warehouse_data/vendors.csv: 6 made-up vendor contacts in two groups, food distributors and pharmacy suppliers, all at @example.com, with the same columns as our vendors file
+- warehouse_data/CLAUDE.md: our warehouse_data folder rules, plus a "Groups" section with one line describing each group
+- .claude/rules/emails.md and .mcp.json, copied from this studio, but change the email rule's footer and link to Northwind's (use https://northwindcold.example/vendor-setup)
+- vendor_campaigns/winter-onboarding/emails/01-hello.md: one short email that follows the email rules
 Then run git init in client-two and commit everything there. Don't install studio-kit; I'll load it myself.
 ```
 
@@ -790,9 +832,9 @@ Then run git init in client-two and commit everything there. Don't install studi
 Test the studio-kit plugin in this client. Only the personalize skill may write files.
 
 1. Is the studio-kit plugin loaded? List the studio-kit skills and agents you can see.
-2. Use the studio-kit personalize skill on campaigns/spring-bake. Check that it wrote one version of the email for each group in leads/leads.csv.
-3. Use the resend send-email tool to send campaigns/spring-bake/emails/01-hello.md to the first person in leads/leads.csv. The kit's guard should block it. Quote the block message word for word, and don't try to get around it.
-4. Search the ../studio-kit folder for the word Kettlebird. There should be no matches.
+2. Use the studio-kit personalize skill on vendor_campaigns/winter-onboarding. Check that it wrote one version of the email for each group in warehouse_data/vendors.csv.
+3. Use the resend send-email tool to send vendor_campaigns/winter-onboarding/emails/01-hello.md to the first vendor in warehouse_data/vendors.csv. The kit's guard should block it. Quote the block message word for word, and don't try to get around it.
+4. Search the ../studio-kit folder for the word Apex. There should be no matches.
 
 Give me a short table: Test | Pass or Fail | What happened.
 Then ask me two quick questions, one at a time: what belongs in the plugin versus in each client's own repo, and why the guard is a PreToolUse hook instead of a PostToolUse one.
@@ -800,11 +842,11 @@ Then ask me two quick questions, one at a time: what belongs in the plugin versu
 
 ### You'll know it worked when
 - `claude plugin validate` says Validation passed. A missing-icon warning is fine.
-- In client-two you see `studio-kit:personalize` and `studio-kit:email-reviewer`. Personalize uses the bakery's own groups.
-- The kit's guard blocks a send to a bakery lead.
+- In client-two you see `studio-kit:personalize` and `studio-kit:email-reviewer`. Personalize uses Northwind's own groups (food distributors and pharmacy suppliers).
+- The kit's guard blocks a send to a Northwind vendor.
 
 ### If something goes wrong
-- **"Kettlebird" shows up in client-two:** a rule was copied without being adapted. Rules belong to each client, so ask Claude to update the footer and link for Rise & Crumb.
+- **"Apex" shows up in client-two:** a rule was copied without being adapted. Rules belong to each client, so ask Claude to update the footer and link for Northwind Cold Storage.
 
 **Exam note:** Use plan mode when a task is large, has several valid approaches, involves design decisions or touches many files. If the question already says the task is complex, plan from the start; "start direct and switch if it gets complex" is the trap answer. Plugins themselves aren't on the exam, and CLAUDE.md and rules always stay in the repo.
 
@@ -820,19 +862,19 @@ Keep track of findings across many files, even after Claude's memory is squeezed
 
 **In plain words:** when Claude's memory gets squeezed, a notebook still has everything. So write in the notebook as you go, not at the end.
 
-### Build 1 of 3 — paste in Claude Code (in the Kettlebird studio)
+### Build 1 of 3 — paste in Claude Code (in the Apex studio)
 ```
-Create practice data: notes/reviews/ with 120 short made-up customer reviews of Kettlebird's earlier tea sampler box, in 6 files of 20 reviews each (reviews-1.md to reviews-6.md). Make them varied and realistic: name specific teas, mix praise with complaints (packaging, slow shipping, too little of a favourite tea, confusing brewing instructions), and give each review a star rating. Don't summarise them.
+Create practice data: notes/client_feedback/ with 120 short made-up feedback notes from B2B retail clients about Apex Transit Solutions deliveries and our delay and ETA emails, in 6 files of 20 notes each (feedback-1.md to feedback-6.md). Every client and company name must be made up. Make them varied and realistic: mention specific shipments and routes, mix praise (clear revised ETAs, early warning, helpful dispatch team, back-on-schedule follow-ups) with complaints (delay email arrived late or not at all, vague ETAs, damaged or wet pallets, missing proof of delivery (POD), hard to reach a person), and give each note a star rating. Don't summarise them.
 ```
 
 ### Then
-Start a named session: `claude -n review-dig`
+Start a named session: `claude -n feedback-dig`
 
 ### Build 2 of 3 — paste in the named session
 ```
-Find the top 5 things customers love and the top 3 complaints across all the reviews in notes/reviews/.
+Find the top 5 things clients value and the top 3 complaints across all the feedback in notes/client_feedback/.
 
-Use a subagent to read the review files, so the raw reviews don't fill up this conversation. Tell the subagent to keep a scratchpad at notes/scratchpad.md and to add to it after each file, one line per finding: the file, the finding, how many reviews mention it, and one short quote. At the end, give me the top 5 and top 3 with how often each came up.
+Use a subagent to read the feedback files, so the raw notes don't fill up this conversation. Tell the subagent to keep a scratchpad at notes/scratchpad.md and to add to it after each file, one line per finding: the file, the finding, how many notes mention it, and one short quote. At the end, give me the top 5 and top 3 with how often each came up.
 ```
 
 ### Then
@@ -840,24 +882,24 @@ Type `/compact`. This squeezes the conversation into a short summary.
 
 ### Build 3 of 3 — same session, after /compact
 ```
-Which review file had the most complaints about damaged or wet packaging? Quote one. Answer from memory first. Then check notes/scratchpad.md and the files, and tell me whether your memory was right.
+Which feedback file had the most complaints about delay emails that arrived late or not at all? Quote one. Answer from memory first. Then check notes/scratchpad.md and the files, and tell me whether your memory was right.
 ```
 
 ### Check — new session, then paste
 ```
 Check my scratchpad. Don't change any files.
 
-1. Does notes/scratchpad.md have lines for every file in notes/reviews/?
-2. Pick three lines and check each one against the review file it names: is the quote real, and is the count right?
+1. Does notes/scratchpad.md have lines for every file in notes/client_feedback/?
+2. Pick three lines and check each one against the feedback file it names: is the quote real, and is the count right?
 
 Give me a short table: Test | Pass or Fail | What you found.
 Then ask me two quick questions, one at a time: why we write to a scratchpad as we go, and what /compact does to Claude's memory.
 ```
 
 ### You'll know it worked when
-- Your main session only sends work to a subagent. The raw reviews never fill your chat.
+- Your main session only sends work to a subagent. The raw feedback never fills your chat.
 - After `/compact`, memory gets details wrong or can't answer, and the scratchpad can.
-- When we tried this with a thin scratchpad (one line per file), it couldn't answer either. Write one line per finding.
+- When the course was tried with a thin scratchpad (one line per file), it couldn't answer either. Write one line per finding.
 
 **Exam note:** The warning sign is answers that stop matching earlier findings, or that talk about "typical patterns" instead of the specific things found. The fixes are scratchpad files, subagents, summaries between phases, saved state files, and `/compact`. A bigger context window is never the answer.
 
