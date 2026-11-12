@@ -1,5 +1,5 @@
 Subject: Your new Apex dispatch account is ready
-Preview: From Dec 7, send dispatch requests, shipping notices and inventory reports in one system.
+Preview: From Dec 7, send dispatch requests, shipping notices and reports in one system.
 
 <!--
 E1 Announcement
@@ -31,14 +31,14 @@ Today you send these updates to us by email and phone. From December 7, you send
 > **For your dispatch team:** you can confirm pickups and upload your bill of lading (BOL) and proof of delivery (POD) in the system. If you want to connect your own dispatch system to ours, reply to this email and our operations team will contact you.
 
 **Group B (local LTL couriers):**
-> **For your team:** you can send pickup times, delivery status and proof of delivery (POD) in a few steps. [works on a phone: confirm with operations]. There is no software to install.
+> **For your team:** you can send pickup times, delivery status and proof of delivery (POD) in the system. [works on a phone: confirm with operations]. There is no software to install.
 
 **Group C (packaging supply vendors):**
 > **For your team:** you can send advance shipping notices (ASNs) and request dock appointments (a booked time slot to unload at our warehouse) in the system, and see the status of each request.
 
 On Thursday, December 10, we'll send you a short step-by-step setup guide.
 
-**Need help?** Reply to this email or call us. A member of our dispatch team will answer within one business day.
+**Need help?** Reply to this email or call us. A member of our dispatch team will answer within [reply time: confirm with operations].
 
 — Apex Transit Solutions Dispatch Team
 This update was sent automatically from our tracking system.

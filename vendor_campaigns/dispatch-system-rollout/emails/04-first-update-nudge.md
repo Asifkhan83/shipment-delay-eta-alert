@@ -23,7 +23,7 @@ Once your first update comes through, we'll send you a short confirmation with w
 
 The setup page also has the step-by-step guide for your group.
 
-**Not sure how to send it?** Reply to this email or call us. A member of our dispatch team will answer within one business day.
+**Not sure how to send it?** Reply to this email or call us. A member of our dispatch team will answer within [reply time: confirm with operations].
 
 — Apex Transit Solutions Dispatch Team
 This update was sent automatically from our tracking system.

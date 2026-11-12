@@ -38,7 +38,7 @@ The setup page also has the full guide for your group, with screenshots.
 
 [Start your setup](https://apextransit.example/dispatch-setup)
 
-**Need help?** Reply to this email or call us. A member of our dispatch team will answer within one business day.
+**Need help?** Reply to this email or call us. A member of our dispatch team will answer within [reply time: confirm with operations].
 
 — Apex Transit Solutions Dispatch Team
 This update was sent automatically from our tracking system.
