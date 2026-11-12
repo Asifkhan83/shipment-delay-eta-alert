@@ -12,33 +12,33 @@ Before sending: keep ONE group paragraph below and delete the other two. The gro
 
 Hi {{first_name}},
 
-From **Monday, December 7**, Apex Transit Solutions is moving dispatch requests, advance shipping notices (ASNs), dock appointments (booked time slots to load or unload at our warehouse) and inventory reports to one online system: **[system name: confirm with operations]**.
+From **Monday, December 7**, Apex Transit Solutions is moving dispatch requests, advance shipping notices (ASNs), dock appointments (booked time slots to load or unload at our warehouse) and inventory reports to one online system: **Apex Dispatch Portal**.
 
 Your account for {{company_name}} is already set up. You only need to activate it.
 
 **What changes**
 Today you send these updates to us by email and phone. From December 7, you send them through the new system instead. You can see your dock appointments and the status of your requests in one place.
 
-You can keep sending updates by email or phone until [end date: confirm with operations].
+You can keep sending updates by email or phone until Friday, January 15, 2027.
 
 **What you need to do**
-1. Activate your account. It takes [setup time: confirm with operations].
+1. Activate your account. It takes about 15 minutes.
 2. Send your next update to Apex through the system.
 
 [Activate your account](https://apextransit.example/dispatch-setup)
 
 <!-- Group A (high-volume freight carriers) -->
-**For your dispatch team:** you can confirm pickups and upload your bill of lading (BOL) and proof of delivery (POD) in the system. If you want to connect your own dispatch system to ours, reply to this email and our operations team will contact you within [integration reply time: confirm with operations].
+**For your dispatch team:** you can confirm pickups and upload your bill of lading (BOL) and proof of delivery (POD) in the system. If you want to connect your own dispatch system to ours, reply to this email and our operations team will contact you within one business day.
 
 <!-- Group B (local LTL couriers) -->
-**For your team:** you can send pickup times, delivery status and proof of delivery (POD) in the system. [If confirmed: It works on a phone, and there is no software to install.]
+**For your team:** you can send pickup times, delivery status and proof of delivery (POD) in the system. It works in your phone's web browser, and there is no software to install.
 
 <!-- Group C (packaging supply vendors) -->
 **For your team:** you can send advance shipping notices (ASNs) and request dock appointments in the system, and see the status of each request.
 
 On Thursday, December 10, we'll send you a short step-by-step setup guide.
 
-**Need help?** Ask us, and a member of our dispatch team will answer within [reply time: confirm with operations].
+**Need help?** Ask us, and a member of our dispatch team will answer within one business day.
 
 — Apex Transit Solutions Dispatch Team
 This update was sent automatically from our tracking system.

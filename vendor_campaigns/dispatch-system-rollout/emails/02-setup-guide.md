@@ -12,33 +12,33 @@ Before sending: keep ONE group paragraph below and delete the other two. The gro
 
 Hi {{first_name}},
 
-On Monday, December 7, we told you that Apex dispatch updates are moving to **[system name: confirm with operations]**. Here is how to set up your account for {{company_name}}. It takes [setup time: confirm with operations].
+On Monday, December 7, we told you that Apex dispatch updates are moving to **Apex Dispatch Portal**. Here is how to set up your account for {{company_name}}. It takes about 15 minutes.
 
 **Step 1: Activate your account**
-Open the setup page below and follow the steps to activate. [activation steps: confirm with operations]
+Open the setup page below and follow the steps to activate.
 
 **Step 2: Check your company details**
-Make sure your company details are correct. [fields: confirm with operations]
+Make sure your company details are correct.
 
 **Step 3: Send your next update through the system**
 Next time you have an update for Apex, send it in the system instead of by email or phone. See your group's steps below.
 
-You can keep sending updates by email or phone until [end date: confirm with operations].
+You can keep sending updates by email or phone until Friday, January 15, 2027.
 
 <!-- Group A (high-volume freight carriers) -->
-**Your first update:** confirm your next Apex pickup in the system, then upload the bill of lading (BOL). After delivery, upload the proof of delivery (POD). If you want to connect your own dispatch system instead of entering updates by hand, reply to this email and our operations team will contact you within [integration reply time: confirm with operations].
+**Your first update:** confirm your next Apex pickup in the system, then upload the bill of lading (BOL). After delivery, upload the proof of delivery (POD). If you want to connect your own dispatch system instead of entering updates by hand, reply to this email and our operations team will contact you within one business day.
 
 <!-- Group B (local LTL couriers) -->
-**Your first update:** after your next Apex pickup, enter the pickup time and delivery status in the system. After delivery, upload the proof of delivery (POD). [If confirmed: It works on a phone.]
+**Your first update:** after your next Apex pickup, enter the pickup time and delivery status in the system. After delivery, upload the proof of delivery (POD). It works in your phone's web browser, with no app to install.
 
 <!-- Group C (packaging supply vendors) -->
 **Your first update:** send the advance shipping notice (ASN) for your next delivery to Apex in the system, then request a dock appointment (a booked time slot to unload at our warehouse). You'll see when the appointment is confirmed.
 
-[If confirmed: The setup page also has the full guide for your group.]
+The setup page also has the full guide for your group.
 
 [Start your setup](https://apextransit.example/dispatch-setup)
 
-**Need help?** Ask us, and a member of our dispatch team will answer within [reply time: confirm with operations].
+**Need help?** Ask us, and a member of our dispatch team will answer within one business day.
 
 — Apex Transit Solutions Dispatch Team
 This update was sent automatically from our tracking system.
