@@ -28,4 +28,11 @@ This rule applies to every email file in any vendor campaign, and only to email 
    You're getting this because you're a registered Apex Transit Solutions vendor.
    Apex Transit Solutions, {{company_address}} · Email preferences: {{preferences_url}}
 
-The voice guide still applies to everything in between: exact dates, no hype, no guarantees, and placeholders like `[setup time: confirm with operations]` instead of unverified facts.
+The voice guide still applies to everything in between: exact dates, no hype, no guarantees, and placeholders instead of unverified facts.
+
+**Placeholders and send notes (drafts only):**
+
+- A missing fact is written as `[what it is: confirm with operations]`, for example `[setup time: confirm with operations]`. Use the same placeholder name for the same fact in every email, and a different name for a different fact.
+- A sentence that is only true if operations confirms it is wrapped as `[If confirmed: ...]`.
+- Send notes (send date, audience, what to delete) go in one HTML comment `<!-- ... -->` straight after the Preview line. Group labels are HTML comments too.
+- Before an email is sent, every placeholder is filled in or removed, and every HTML comment is deleted.

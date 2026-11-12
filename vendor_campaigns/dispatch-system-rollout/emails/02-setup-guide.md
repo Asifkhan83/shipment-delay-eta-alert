@@ -26,7 +26,7 @@ Next time you have an update for Apex, send it in the system instead of by email
 You can keep sending updates by email or phone until [end date: confirm with operations].
 
 <!-- Group A (high-volume freight carriers) -->
-**Your first update:** confirm your next Apex pickup in the system, then upload the bill of lading (BOL). After delivery, upload the proof of delivery (POD). If you want to connect your own dispatch system instead of entering updates by hand, reply to this email and our operations team will contact you within [reply time: confirm with operations].
+**Your first update:** confirm your next Apex pickup in the system, then upload the bill of lading (BOL). After delivery, upload the proof of delivery (POD). If you want to connect your own dispatch system instead of entering updates by hand, reply to this email and our operations team will contact you within [integration reply time: confirm with operations].
 
 <!-- Group B (local LTL couriers) -->
 **Your first update:** after your next Apex pickup, enter the pickup time and delivery status in the system. After delivery, upload the proof of delivery (POD). [If confirmed: It works on a phone.]
