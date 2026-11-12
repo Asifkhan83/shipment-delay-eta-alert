@@ -28,7 +28,7 @@ You can keep sending updates by email or phone until [end date: confirm with ope
 [Activate your account](https://apextransit.example/dispatch-setup)
 
 <!-- Group A (high-volume freight carriers) -->
-**For your dispatch team:** you can confirm pickups and upload your bill of lading (BOL) and proof of delivery (POD) in the system. If you want to connect your own dispatch system to ours, reply to this email and our operations team will contact you within [reply time: confirm with operations].
+**For your dispatch team:** you can confirm pickups and upload your bill of lading (BOL) and proof of delivery (POD) in the system. If you want to connect your own dispatch system to ours, reply to this email and our operations team will contact you within [integration reply time: confirm with operations].
 
 <!-- Group B (local LTL couriers) -->
 **For your team:** you can send pickup times, delivery status and proof of delivery (POD) in the system. [If confirmed: It works on a phone, and there is no software to install.]

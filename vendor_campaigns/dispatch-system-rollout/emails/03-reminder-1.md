@@ -15,7 +15,7 @@ Hi {{first_name}},
 
 Your Apex dispatch account for {{company_name}} is ready, but it hasn't been activated yet.
 
-Activating takes [setup time: confirm with operations]. After that, you can send dispatch requests, advance shipping notices (ASNs) and inventory reports, and request dock appointments, in one place.
+Activating takes [setup time: confirm with operations]. After that, you can send dispatch requests, advance shipping notices (ASNs), dock appointment requests and inventory reports in one place.
 
 Then send your next update to Apex through the system instead of by email or phone.
 

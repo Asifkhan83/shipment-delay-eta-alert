@@ -15,11 +15,11 @@ Hi {{first_name}},
 
 Thank you for activating your Apex dispatch account for {{company_name}}.
 
-There's one more step: **send your next update to Apex through the system** instead of by email or phone. This can be your next dispatch request, pickup confirmation or advance shipping notice (ASN).
+There's one more step: **send your next update to Apex through the system** instead of by email or phone. This can be your next dispatch request, pickup confirmation, delivery status or advance shipping notice (ASN).
 
 [Open your Apex account](https://apextransit.example/dispatch-setup)
 
-Once your first update comes through, we'll send you a short confirmation with where to find your dock appointments and request status.
+Once your first update comes through, we'll send you a short confirmation email.
 
 [If confirmed: The setup page also has the step-by-step guide for your group.]
 
