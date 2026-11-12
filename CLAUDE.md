@@ -54,7 +54,7 @@ All emails follow the communication and email voice guide below.
 
 ## Tooling
 
-The project has Anthropic's `operations` and `sales` plugins installed at project scope (see `.claude/settings.json`). There's no build, lint or test tooling yet. Node.js 22+ is the only runtime the course uses (for the hook in `.claude/hooks/` and `scripts/review.mjs`). The plan's "Your studio at the end" tree shows the target layout.
+The project has Anthropic's `operations`, `sales` and `marketing` plugins installed at project scope (see `.claude/settings.json`). Marketing was added in Step 4 for `/marketing:campaign-plan` and is used again for `/marketing:email-sequence`. There's no build, lint or test tooling yet. Node.js 22+ is the only runtime the course uses (for the hook in `.claude/hooks/` and `scripts/review.mjs`). The plan's "Your studio at the end" tree shows the target layout.
 
 ## Rules
 
