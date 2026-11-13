@@ -54,6 +54,7 @@ Read every `.md` file in `<campaign folder>/emails/`. For each email and each gr
 ### Group paragraphs and notes
 - If an email has one paragraph per group (marked with HTML comments such as `<!-- Group A (...) -->`), keep only that group's paragraph and delete the other paragraphs and all the group label comments.
 - Keep the send-notes comment after the Preview line, but add a first line `Version: <vendor_group>` and remove the instruction about keeping one group paragraph, since that's now done.
+- Change the `To:` line in the send notes so it names only that group, and end it with "only". Keep any other condition in it. For example, `To: all 150 active vendors (groups A, B and C)` becomes `To: group B, local LTL couriers (70 vendors) only`, and `To: vendors who have NOT activated their account yet (all groups)` becomes `To: vendors who have NOT activated their account yet (group B, local LTL couriers only)`. A group version must never say it goes to all vendors.
 
 ### Rules that still apply
 - `.claude/rules/emails.md`: subject 50 characters or fewer, preview 90 or fewer, one main link, sign-off and footer last.
