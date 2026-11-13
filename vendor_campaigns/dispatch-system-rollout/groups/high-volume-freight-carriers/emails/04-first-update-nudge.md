@@ -14,7 +14,7 @@ Before sending: delete this comment.
 
 Hi {{first_name}},
 
-Thank you for activating your Apex dispatch account for {{company_name}}, ready for your dispatch team's next Apex pickup.
+Thank you for activating your Apex dispatch account for {{company_name}}. Your dispatch team can use it for your next Apex pickup.
 
 There's one more step: **send your next update to Apex through the system** instead of by email or phone. This can be your next pickup confirmation or bill of lading (BOL) upload.
 
