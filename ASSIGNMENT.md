@@ -18,7 +18,7 @@ You will set up a Logistics and Warehouse Email Automation Studio for **Apex Tra
 - [x] 5. Practice leads
 - [x] 6. Email rule and sequence
 - [x] 7. Fresh-eyes review
-- [ ] 8. Your own skill: personalize
+- [x] 8. Your own skill: personalize
 
 ### Part 2 · Send safely
 - [ ] 9. Connect Resend in practice mode

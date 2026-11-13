@@ -14,7 +14,7 @@ Before sending: delete this comment.
 
 Hi {{first_name}},
 
-Thank you for activating your Apex dispatch account for {{company_name}}, ready for your next delivery to our warehouse.
+Thank you for activating your Apex dispatch account for {{company_name}}. You can use it for your next delivery to our warehouse.
 
 There's one more step: **send your next update to Apex through the system** instead of by email or phone. This can be the advance shipping notice (ASN) for your next delivery to Apex.
 
