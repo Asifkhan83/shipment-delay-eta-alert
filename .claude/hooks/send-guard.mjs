@@ -15,12 +15,15 @@ function block(reason) {
   process.exit(2);
 }
 
-// Accept a string or an array; pull the address out of "Name <addr>" forms.
+// Accept a string or an array; split "a@x.com, b@y.com" lists and
+// pull the address out of "Name <addr>" forms.
 function addressesFrom(value) {
   if (value == null) return [];
-  const list = Array.isArray(value) ? value : [value];
-  return list.map((v) => {
-    const s = String(v).trim();
+  const list = (Array.isArray(value) ? value : [value])
+    .flatMap((v) => String(v).split(/[,;]/))
+    .map((s) => s.trim())
+    .filter(Boolean);
+  return list.map((s) => {
     const m = s.match(/<([^>]+)>/);
     return (m ? m[1] : s).trim().toLowerCase();
   });
@@ -45,7 +48,10 @@ if (BLOCK_ALWAYS.has(tool)) {
 
 if (CHECK_RECIPIENTS.has(tool)) {
   const myEmail = (process.env.MY_EMAIL ?? "").trim().toLowerCase();
-  const emails = tool === "send-batch-emails" ? input.emails ?? [] : [input];
+  const emails = tool === "send-batch-emails" ? input.emails : [input];
+  if (!Array.isArray(emails)) {
+    block("could not find the list of emails in this batch, so it was blocked to be safe.");
+  }
 
   for (const email of emails) {
     for (const field of ["to", "cc", "bcc"]) {
