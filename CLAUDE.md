@@ -59,7 +59,7 @@ The project has Anthropic's `operations`, `sales` and `marketing` plugins instal
 ## Rules
 
 - Write in plain English.
-- Never send actual emails autonomously. Never send email to real people. Practice leads use `@example.com` addresses only. From Step 9 on, Resend sends go only to `@resend.dev` test addresses or the user's own `MY_EMAIL`.
+- Never send actual emails autonomously. Never send email to real people. Practice leads use `@example.com` addresses only. Sending through Resend (the `resend` server in `.mcp.json`) is allowed only to Resend's test addresses (ending in `@resend.dev`) and to the user's own email address (`MY_EMAIL`). A guard hook added in the next step will enforce this and block any other recipient.
 - Never modify live warehouse databases autonomously.
 - Ask before deleting anything.
 - Never state a delay reason that didn't come from an authorized operational source.
