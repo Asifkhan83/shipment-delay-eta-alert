@@ -12,3 +12,6 @@ Automatically notify customers about delays, provide a revised ETA, explain the 
 - Generate an email containing the original ETA, revised ETA, reason, and corrective action.
 - Escalate critical delays to the operations manager.
 - Send another notification when the shipment is back on schedule.
+
+## Using this repo
+New here? Read [CONTRIBUTING.md](CONTRIBUTING.md) for setup, how work is done, and the safety rules everyone must follow.
