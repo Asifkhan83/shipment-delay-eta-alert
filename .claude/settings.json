@@ -1,4 +1,26 @@
 {
+  "permissions": {
+    "deny": [
+      "Read(**/.env)",
+      "Edit(**/.env)",
+      "Write(**/.env)",
+      "Read(**/.env.local)",
+      "Edit(**/.env.local)",
+      "Write(**/.env.local)",
+      "Read(**/.env.*.local)",
+      "Edit(**/.env.*.local)",
+      "Write(**/.env.*.local)",
+      "Read(**/.env.live)",
+      "Edit(**/.env.live)",
+      "Write(**/.env.live)",
+      "Read(**/.env.production)",
+      "Edit(**/.env.production)",
+      "Write(**/.env.production)",
+      "Bash(cat .env*)",
+      "Bash(type .env*)",
+      "Bash(Get-Content .env*)"
+    ]
+  },
   "enabledPlugins": {
     "operations@knowledge-work-plugins": true,
     "sales@knowledge-work-plugins": true,

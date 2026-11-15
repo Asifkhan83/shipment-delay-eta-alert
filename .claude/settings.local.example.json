@@ -1,0 +1,6 @@
+{
+  "enabledMcpjsonServers": ["resend"],
+  "env": {
+    "MY_EMAIL": "you@example.com"
+  }
+}

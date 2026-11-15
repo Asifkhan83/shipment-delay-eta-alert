@@ -1,8 +1,10 @@
 # Claude Code personal settings
 .claude/settings.local.json
 
-# Secrets
+# Secrets (any folder). Templates named .env.example stay tracked.
 .env
+.env.*
+!.env.example
 
 # System files
 .DS_Store
